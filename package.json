@@ -1,6 +1,6 @@
 {
   "name": "git-and-github",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "exercises for learning Github in Digital History",
   "main": "index.js",
   "scripts": {
