@@ -1,0 +1,13 @@
+{
+  "name": "git-and-github",
+  "version": "0.1.0",
+  "description": "exercises for learning Github in Digital History",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ",
+    "collectjson": "node collectjson.js",
+    "collectjson": "node collectjson-teacher.js"
+  },
+  "author": "Matt Price",
+  "license": "AGPL-3.0"
+}
