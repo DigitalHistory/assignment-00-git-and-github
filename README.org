@@ -3,10 +3,10 @@ This is an assignment for [[http://digital.hackinghistory.ca][Digital History]],
 
 The purpose of this assignment is to familiarize you with the tools we will be using throughout the class. These are basic parts of every developers toolkit, so understanding them will take you a long way. 
 
-As a side effect, changes to this repository will show up in a simple, publicly accessible website visible at https://digitalhistory.github.io/dfkljslk. Use the privacy options described in [[Details]] to avoid sharing info you don't want to share.
+As a side effect, changes to this repository will show up in a simple, publicly accessible website visible at https://digitalhistory.github.io/00-git-and-github/. Use the privacy options described in [[Details]] to avoid sharing info you don't want to share.
 
 * Expectations
-This assignment is graded pass/fail. You will only get credit if *your repository passes all tests.* To pass the assignment, you must:
+This assignment is graded pass/fail. You will only get credit if *your repository passes all relevant tests.* To pass the assignment, you must:
 - successfully install git and bash on your computer
 - successfully install node and npm on your computer
 - fork this repository and clone a local copy
