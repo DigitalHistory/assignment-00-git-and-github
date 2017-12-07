@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults || true",
+    "watch": "mocha --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults -w",
     "collectjson": "node collectjson-teacher.js"
   },
   "author": "Matt Price",
