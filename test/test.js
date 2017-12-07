@@ -11,7 +11,7 @@ const matchesProfEmail = function (email, profEmails) {
 };
 
 var studentCommits = 0,
-    minCommits = 3;
+    minCommits = 2;
 var chai=require('chai'),
     expect=chai.expect;
 chai.use(require('chai-fs'));
