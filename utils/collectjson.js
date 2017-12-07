@@ -80,21 +80,9 @@ readAll('students','.json');
 fs.writeFile("utils/allstudents.js", "var nativestudents= " + JSON.stringify(studentArray) + ";", function(err) {
   if(err) {
     return console.log(err);
-  }
+  } else
+  {
+    return console.log("utils/allstudents.js successfully written")}
   
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
