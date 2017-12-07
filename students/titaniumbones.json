@@ -1,0 +1,14 @@
+{
+  "firstName": "Matt",
+  "lastName": "Price",
+  "nickName": "Bones",
+  "privateName": false,
+  "picture": "images/matt_price.jpg",
+  "privatePicture": false,
+  "email": "matt.price@utoronto.ca",
+  "privateEmail": true,
+  "github": "titaniumbones",
+  "privateGithub": false,
+  "superpower" : "falling off cliffs, jumping off bridges",
+  "academicinterests": "Nineteenth Century Science, Data Justice"
+}
