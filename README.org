@@ -34,7 +34,7 @@ Setting up your work environment could take some time. It's best to do this well
 ** Commit your changes
 *** Add a picture of yourself to the repository
 - the picture should be named ~firstname_lastname.jpg~ (substitute your real names!) and should be placed in the ~images~ directory
-- commit this new file to the repository. You can use the command line, the git tools inside Atom, or the GitKraken interface, as you prefer. *Insert link to committing instructions in lecture notes* 
+- commit this new file to the repository. You can use the command line, the git tools inside Atom, or the GitKraken interface, as you prefer.
 
 *** Create and update your JSON file
 
