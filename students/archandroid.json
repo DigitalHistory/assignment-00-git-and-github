@@ -1,0 +1,15 @@
+{
+  "firstName": "Cindi",
+  "lastName": "Mayweather",
+  "nickName": "ArchAndroid",
+  "privateName": false,
+  "picture": "https://upload.wikimedia.org/wikipedia/en/f/f9/Janelle_Mon%C3%A1e_-_The_ArchAndroid_album_cover.jpg",
+  "privatePicture": false,
+  "email": "archandroid@utoronto.ca",
+  "privateEmail": false,
+  "github": "archandroid",
+  "privateGithub": false,
+  "superpower" : "time travel, power of love",
+  "academicinterests": "Artificial Intelligence; Cognitive Science; Psychology of Emotion; Physiology of Music"
+  
+}

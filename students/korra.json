@@ -1,0 +1,14 @@
+{
+  "firstName": "Korra",
+  "lastName": "",
+  "nickName": "Avatar",
+  "privateName": false,
+  "picture": "https://upload.wikimedia.org/wikipedia/en/d/db/Korra_The_Legend_of_Korra.jpg",
+  "privatePicture": false,
+  "email": "korra_avatar@@utoronto.ca",
+  "privateEmail": true,
+  "github": "korra",
+  "privateGithub": false,
+  "superpower" : "Master of All Four Elements",
+  "academicinterests": "Comparative Ancient Greek and Chinese Cosmology; Conservation Principles in Physical and Religious Systems"  
+}

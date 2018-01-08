@@ -1,0 +1,295 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 5,
+    "passes": 3,
+    "pending": 0,
+    "failures": 2,
+    "start": "2018-01-08T18:21:03.911Z",
+    "end": "2018-01-08T18:21:10.289Z",
+    "duration": 6378,
+    "testsRegistered": 9,
+    "passPercent": 33.3,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 4,
+    "hasSkipped": true,
+    "passPercentClass": "danger",
+    "pendingPercentClass": "danger"
+  },
+  "suites": {
+    "uuid": "65c9d103-e3c6-4cc3-93d9-3433e47a3365",
+    "title": "",
+    "fullFile": "",
+    "file": "",
+    "beforeHooks": [],
+    "afterHooks": [],
+    "tests": [],
+    "suites": [
+      {
+        "uuid": "8ea4a42b-c9eb-48a5-9496-99f25e688857",
+        "title": "Git Checks",
+        "fullFile": "/Users/ElphabaThropp/assignment-00-git-and-github/test/test.js",
+        "file": "/test/test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "Git Checks \"before all\" hook",
+            "timedOut": false,
+            "duration": 6192,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "gitCommits(repoPath)\n  .on('data', function (commit) {\n    if (!matchesProfEmail(commit.author.email, ignoreCommitEmails))\n    {\n      studentCommits++;\n    }\n  })\n  .on('end', function () {\n  })\n;\ngitCheck  = gitState.checkSync('./', function(r,e) {\n  //return [r, e];\n});\ndone();",
+            "err": {
+              "message": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves.",
+              "estack": "Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure \"done()\" is called; if returning a Promise, ensure it resolves.\n    at Context.<anonymous> (test/test.js:79:5)"
+            },
+            "isRoot": false,
+            "uuid": "b4d54fb4-90d0-4dce-be8e-d4ed326970a1",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "You should have made at least 2 git commits ",
+            "fullTitle": "Git Checks You should have made at least 2 git commits ",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "expect(studentCommits).to.be.at.least(minCommits);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "2daed9ad-b4db-4139-9a4c-393c72246241",
+            "isHook": false,
+            "skipped": true
+          },
+          {
+            "title": "Git should be configured with username and email information",
+            "fullTitle": "Git Checks Git should be configured with username and email information",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "expect(name, \"your Git user name has not been set\").not.to.be.undefined;\nexpect(email, \"your Git email has not been set\").not.to.be.undefined;\nexpect(githubid, \"your Github user name has not been set\").not.to.be.undefined;",
+            "err": {},
+            "isRoot": false,
+            "uuid": "ac671786-45ca-45a8-b668-9f5e825b4c4c",
+            "isHook": false,
+            "skipped": true
+          },
+          {
+            "title": "All changes in current directory should be committed to Git (OK for this to fail while you are still working)",
+            "fullTitle": "Git Checks All changes in current directory should be committed to Git (OK for this to fail while you are still working)",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "expect(gitCheck.dirty, \"looks like you have changed some files and not committed the changes yet\").to.equal(0);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "0af24a40-fe9f-4d52-b301-3d5b304fe86b",
+            "isHook": false,
+            "skipped": true
+          },
+          {
+            "title": "All changes in current directory should be committed to Git (OK for this to fail while you are still working)",
+            "fullTitle": "Git Checks All changes in current directory should be committed to Git (OK for this to fail while you are still working)",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "expect(gitCheck.untracked, \"looks like you have some files in the directory which have not been added to the repository. \\n      Make sure your answers do not rely on them, or tests will fail on the server.\").to.equal(0);",
+            "err": {},
+            "isRoot": false,
+            "uuid": "6f3985ab-03f1-4bbf-aaae-9468d5d79e06",
+            "isHook": false,
+            "skipped": true
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [],
+        "pending": [],
+        "skipped": [
+          "2daed9ad-b4db-4139-9a4c-393c72246241",
+          "ac671786-45ca-45a8-b668-9f5e825b4c4c",
+          "0af24a40-fe9f-4d52-b301-3d5b304fe86b",
+          "6f3985ab-03f1-4bbf-aaae-9468d5d79e06"
+        ],
+        "duration": null,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      },
+      {
+        "uuid": "996c7ebb-3bb9-4f75-81fc-74b6edee10d3",
+        "title": "JSON Checks",
+        "fullFile": "/Users/ElphabaThropp/assignment-00-git-and-github/test/test.js",
+        "file": "/test/test.js",
+        "beforeHooks": [
+          {
+            "title": "\"before all\" hook",
+            "fullTitle": "JSON Checks \"before all\" hook",
+            "timedOut": false,
+            "duration": 0,
+            "pass": false,
+            "fail": false,
+            "pending": false,
+            "code": "// read the JSON file",
+            "err": {},
+            "isRoot": false,
+            "uuid": "e8711136-a12e-4d9d-b5a8-748736cc673e",
+            "isHook": true,
+            "skipped": false
+          }
+        ],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "Text file with title yourGithubID.json should exist in \"students\" directory",
+            "fullTitle": "JSON Checks Text file with title yourGithubID.json should exist in \"students\" directory",
+            "timedOut": false,
+            "duration": 29,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "let p = `students/${githubid}.json`;\nexpect(p).to.be.a.file();",
+            "err": {},
+            "isRoot": false,
+            "uuid": "ba00045f-4540-4537-9812-5f809c4c6a13",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "JSON file should be valid JSON",
+            "fullTitle": "JSON Checks JSON file should be valid JSON",
+            "timedOut": false,
+            "duration": 33,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "let p = `students/${githubid}.json`;\nlet f = fs.readFileSync(p, \"utf-8\");\nexpect(jsonLint.parse(fs.readFileSync(p, \"utf-8\"))).to.not.be.a('error');",
+            "err": {},
+            "isRoot": false,
+            "uuid": "63d35422-e135-47d2-bfd6-b90ecd6d2de2",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "JSON file should contain name, email,github, and picture",
+            "fullTitle": "JSON Checks JSON file should contain name, email,github, and picture",
+            "timedOut": false,
+            "duration": 3,
+            "state": "passed",
+            "speed": "fast",
+            "pass": true,
+            "fail": false,
+            "pending": false,
+            "code": "let j = JSON.parse(fs.readFileSync(`students/${githubid}.json`, 'utf8'));\nexpect(j.lastName, \"your JSON file does not record your last name!\").to.be.a(\"string\").that.is.not.empty;\nexpect(j.firstName, \"your JSON file does not record your first name!\").to.be.a(\"string\").that.is.not.empty;\nexpect(j.github, \"your gituhubid doesn't seem to be recorded properly\").to.equal(githubid);\nexpect(j.picture, \"your JSON file does not record your picture URL or path\").to.be.a(\"string\").that.is.not.empty;",
+            "err": {},
+            "isRoot": false,
+            "uuid": "d6fd57a7-e62d-4661-a5e0-ca2c5cb76582",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [
+          "ba00045f-4540-4537-9812-5f809c4c6a13",
+          "63d35422-e135-47d2-bfd6-b90ecd6d2de2",
+          "d6fd57a7-e62d-4661-a5e0-ca2c5cb76582"
+        ],
+        "failures": [],
+        "pending": [],
+        "skipped": [],
+        "duration": 65,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      },
+      {
+        "uuid": "c6683c1d-8150-4cf3-b587-34e18e5b0488",
+        "title": "Reflection Checks (not required unless you are attempting an \"A\" grade!)",
+        "fullFile": "/Users/ElphabaThropp/assignment-00-git-and-github/test/test.js",
+        "file": "/test/test.js",
+        "beforeHooks": [],
+        "afterHooks": [],
+        "tests": [
+          {
+            "title": "Reflection file should exist",
+            "fullTitle": "Reflection Checks (not required unless you are attempting an \"A\" grade!) Reflection file should exist",
+            "timedOut": false,
+            "duration": 3,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "let r = `Reflection/${githubid}.md`;\nexpect(r, `I can't find the file ${r}`).to.be.a.file();",
+            "err": {
+              "message": "AssertionError: value: expected 'Reflection/daneoraptor.md' to exist",
+              "estack": "AssertionError: value: expected 'Reflection/daneoraptor.md' to exist\n    at Proxy.<anonymous> (node_modules/chai-fs/lib/assertions/file.js:21:53)\n    at Proxy.methodWrapper (node_modules/chai/lib/chai/utils/addMethod.js:57:25)\n    at Context.<anonymous> (test/test.js:132:53)"
+            },
+            "isRoot": false,
+            "uuid": "cd8b6277-1968-47c1-a319-255ed0e29a5d",
+            "isHook": false,
+            "skipped": false
+          },
+          {
+            "title": "The total word count for your reflection should be at least 275",
+            "fullTitle": "Reflection Checks (not required unless you are attempting an \"A\" grade!) The total word count for your reflection should be at least 275",
+            "timedOut": false,
+            "duration": 0,
+            "state": "failed",
+            "pass": false,
+            "fail": true,
+            "pending": false,
+            "code": "let content=fs.readFileSync(`Reflection/${githubid}.md`, 'utf-8');\nexpect(hwc(content), \"\").to.be.at.least(275);",
+            "err": {
+              "message": "Error: ENOENT: no such file or directory, open 'Reflection/daneoraptor.md'",
+              "estack": "Error: ENOENT: no such file or directory, open 'Reflection/daneoraptor.md'\n    at Object.fs.openSync (fs.js:646:18)\n    at Object.fs.readFileSync (fs.js:551:33)\n    at Context.<anonymous> (test/test.js:135:20)"
+            },
+            "isRoot": false,
+            "uuid": "3a461000-b547-48d2-a00e-f651ab225d37",
+            "isHook": false,
+            "skipped": false
+          }
+        ],
+        "suites": [],
+        "passes": [],
+        "failures": [
+          "cd8b6277-1968-47c1-a319-255ed0e29a5d",
+          "3a461000-b547-48d2-a00e-f651ab225d37"
+        ],
+        "pending": [],
+        "skipped": [],
+        "duration": 3,
+        "root": false,
+        "rootEmpty": false,
+        "_timeout": 2000
+      }
+    ],
+    "passes": [],
+    "failures": [],
+    "pending": [],
+    "skipped": [],
+    "duration": 0,
+    "root": true,
+    "rootEmpty": true,
+    "_timeout": 2000
+  },
+  "copyrightYear": 2018
+}
