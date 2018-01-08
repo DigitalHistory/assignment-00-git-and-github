@@ -50,7 +50,7 @@ gitConfig(function (err, config) {
   if (config.user.name) {name = config.user.name;}
   if (config.user.email) {email = config.user.email;}
   if (config.github.user) {githubid = config.github.user;}
-
+  
 });
 /////////////////////////////
 ///
@@ -123,7 +123,7 @@ describe('JSON Checks', function() {
     expect(j.picture, "your JSON file does not record your picture URL or path").to.be.a("string").that.is.not.empty;
   });
 
-
+  
 });
 
 describe('Reflection Checks (not required unless you are attempting an "A" grade!)', function() {
@@ -136,3 +136,21 @@ describe('Reflection Checks (not required unless you are attempting an "A" grade
     expect(hwc(content), "").to.be.at.least(275);
   });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
