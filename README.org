@@ -54,7 +54,7 @@ When you are done, commit your changes as above.
 *** Answer Reflection Questions ("A" Bundle only)
 *This section is only required for students who are attempting to achieve an "A" grade.* If that is not your goal, you do not need to worry about this part, or about tailing tests from this section.
 
-In the folder "Reflection", you will find a file named ~reflection-template.md~. Copy the file contents to a new file named ~reflection-yourgithubid.md~ (again, use your real Github id instead of ~githubid~!).  This file contains two subheadings, each of which is a question. Answer each of these questions in a response of approximately 150 words. Your responses should be thoughtful and perceptive, and written at a level that would normally result in a grade of B 
+In the folder "Reflection", you will find a file named ~reflection-template.md~. Copy the file contents to a new file named ~yourgithubid.md~ (again, use your real Github id instead of ~githubid~!).  This file contains two subheadings, each of which is a question. Answer each of these questions in a response of approximately 150 words. Your responses should be thoughtful and perceptive, and written at a level that would normally result in a grade of B 
 ** Run tests
 At any point in the process, you can re-run your tests by executing ~npm test~ from a terminal in the working directory. Visit the file ~TestResults/results.html~ in a browser to see your updated results.  To have the tests run continuously whenever you modify a file, run ~npm run watch~ instead (you will still have to refresh the web page to see the new results!).
 
