@@ -1,15 +1,15 @@
 {
   "firstName": "Anthony",
   "lastName": "Frati",
-  "nickName": "",
+  "nickName": "Frati",
   "privateName": false,
   "picture": "images/Anthony_Frati.jpg",
   "privatePicture": false,
-  "email": "student@mail.utoronto.ca",
+  "email": "anthony.frati@mail.utoronto.ca",
   "privateEmail": false,
-  "github": "uoftstudent",
+  "github": "Frati-96",
   "privateGithub": false,
-  "superpower" : "late night cramming",
-  "academicinterests": "I'm supposed to have interests?"
+  "superpower" : "Sleeping",
+  "academicinterests": "Meh"
 
 }
