@@ -1,0 +1,15 @@
+{
+  "firstName": "Landy",
+  "lastName": "Simpson",
+  "nickName": "Simpson",
+  "privateName": false,
+  "picture": "images/landy_simpson.jpg",
+  "privatePicture": false,
+  "email": "landy.simpson@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "simpslandyy",
+  "privateGithub": false,
+  "superpower" : "speedy manga reading",
+  "academicinterests": "Backend Development, Image Processing, Astronomy, Topics in Philosophy"
+
+}
