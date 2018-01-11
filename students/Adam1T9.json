@@ -3,7 +3,7 @@
   "lastName": "Nangini",
   "nickName": "Adam",
   "privateName": false,
-  "picture": "adam_nangini.jpg",
+  "picture": "images/adam_nangini.jpg",
   "privatePicture": false,
   "email": "adam.nangini@mail.utoronto.ca",
   "privateEmail": false,
@@ -11,5 +11,5 @@
   "privateGithub": false,
   "superpower" : "Operating a manual transmission",
   "academicinterests": "History and Philosophy"
-  
+
 }
