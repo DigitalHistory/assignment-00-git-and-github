@@ -1,0 +1,13 @@
+# Reflection
+
+Respond to each of the questions below with a carefully thought out relfection on the assignment.
+
+## Question 1
+#### In this assignment, we used your user input to construct a small website composed of flipping cards. Can you think of a more interesting use for this basic layout? The use you describe should serve some pedagogical or research-oriented purpose for historians or humanists.
+
+Perhaps this would be useful in terms of setting up an archive for our class and future classes. We could create a fond titled "HIS393" and add our cards to said fond under the subcategory of students. Would could then be sorted by year within this accession of students. This would create a detailed timeline of students who took digital humanities and the changes in students as time progresses as well as technology.
+
+## Question 2
+#### Information in each student record was provided as a series of "fields", that is, discrete units of information separated from each other. In the use you describe above, what fields would you need to provide for each record? Can you think of any limitations or obstacles that the use of this kind of data structure imposes on your project?
+
+In my proposed use case, students would provide more detailed information such as "what digital humanities mean to them" and "most significant technological infuelnce". This would gennorate a clear window into the time period of each student. One such limitation of this would be organization and storage of said data. As the collection grows, the finding aids required would become larger and more intense which would be an acsessiclity issue. Furthermore, this digital archive would need safegaurds for PII (personally identifiable information) so as to make sure the data is respinsibly handled. 
