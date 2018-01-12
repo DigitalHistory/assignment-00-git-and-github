@@ -4,7 +4,7 @@
   "nickName": "Keener",
   "privateName": false,
   "picture": "images/Shamaila_Anjum.jpg",
-  "privatePicture": true,
+  "privatePicture": false,
   "email": "shamaila.anjum@mail.utoronto.ca",
   "privateEmail": false,
   "github": "sanjum2801",
