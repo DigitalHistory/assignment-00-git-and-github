@@ -1,15 +1,15 @@
 {
   "firstName": "Amelia",
   "lastName": "DeWolfe",
-  "nickName": "Bedelia",
+  "nickName": "n/a",
   "privateName": false,
   "picture": "https://upload.wikimedia.org/wikipedia/en/f/f9/Janelle_Mon%C3%A1e_-_The_ArchAndroid_album_cover.jpg",
   "privatePicture": false,
-  "email": "archandroid@utoronto.ca",
+  "email": "amelia.dewolfe@mail.utoronto.ca",
   "privateEmail": false,
-  "github": "archandroid",
+  "github": "ameliadewolfe",
   "privateGithub": false,
-  "superpower" : "time travel, power of love",
-  "academicinterests": "Artificial Intelligence; Cognitive Science; Psychology of Emotion; Physiology of Music"
+  "superpower" : "Digging",
+  "academicinterests": "Archaeology; History; Material Culture; Museum Studies"
 
 }
