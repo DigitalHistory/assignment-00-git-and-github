@@ -1,14 +1,15 @@
 {
-  "firstName": "Amelia",
-  "lastName": "DeWolfe",
-  "nickName": "n/a",
+  "firstName": "A",
+  "lastName": "Student",
+  "nickName": "Keener",
   "privateName": false,
-  "picture": "images/amelia_dewolfe.jpg",
+  "picture": "images/some_picture.jpg",
   "privatePicture": false,
-  "email": "amelia.dewolfe@mail.utoronto.ca",
+  "email": "student@mail.utoronto.ca",
   "privateEmail": false,
-  "github": "ameliadewolfe",
+  "github": "uoftstudent",
   "privateGithub": false,
-  "superpower" : "Digging",
-  "academicinterests": "Archaeology; History; Material Culture; Museum Studies"
+  "superpower" : "late night cramming",
+  "academicinterests": "I'm supposed to have interests?"
+  
 }
