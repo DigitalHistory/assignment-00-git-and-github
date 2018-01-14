@@ -1,0 +1,15 @@
+{
+  "firstName": "Iffat",
+  "lastName": "Sajjad",
+  "nickName": "Iffat",
+  "privateName": false,
+  "picture": "images/iffat_sajjad.jpg",
+  "privatePicture": true,
+  "email": "iffat.sajjad@mail.utoronto.ca",
+  "privateEmail": true,
+  "github": "IffatS",
+  "privateGithub": false,
+  "superpower" : "Mayonnaise vision",
+  "academicinterests": "digital history, cultural studies, philosophy"
+  
+}
