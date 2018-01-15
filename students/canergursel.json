@@ -1,0 +1,14 @@
+{
+  "firstName": "Caner",
+  "lastName": "Gursel",
+  "privateName": true,
+  "picture": "caner_gursel.jpg",
+  "privatePicture": true,
+  "email": "caner.gursel@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "canergursel",
+  "privateGithub": false,
+  "superpower" : "creating perspectives",
+  "academicinterests": "philosophy of mind"
+
+}
