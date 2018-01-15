@@ -2,13 +2,13 @@
   "firstName": "Chiara",
   "lastName": "Fallone",
   "nickName": "Chiara",
-  "privateName": True,
+  "privateName": true,
   "picture": "images/Chiara_Fallone.jpg",
   "privatePicture": false,
   "email": "chiara.fallone@utoronto.ca",
-  "privateEmail": True,
+  "privateEmail": true,
   "github": "ChiaraRF",
-  "privateGithub": True,
+  "privateGithub": true,
   "superpower" : "Sarcasm",
   "academicinterests": "History and Languages"
   
