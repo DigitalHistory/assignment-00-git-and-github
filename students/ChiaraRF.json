@@ -1,15 +1,15 @@
 {
-  "firstName": "A",
-  "lastName": "Student",
-  "nickName": "Keener",
-  "privateName": false,
-  "picture": "images/some_picture.jpg",
+  "firstName": "Chiara",
+  "lastName": "Fallone",
+  "nickName": "Chiara",
+  "privateName": True,
+  "picture": "images/Chiara_Fallone.jpg",
   "privatePicture": false,
-  "email": "student@mail.utoronto.ca",
-  "privateEmail": false,
-  "github": "uoftstudent",
-  "privateGithub": false,
-  "superpower" : "late night cramming",
-  "academicinterests": "I'm supposed to have interests?"
+  "email": "chiara.fallone@utoronto.ca",
+  "privateEmail": True,
+  "github": "ChiaraRF",
+  "privateGithub": True,
+  "superpower" : "Sarcasm",
+  "academicinterests": "History and Languages"
   
 }
