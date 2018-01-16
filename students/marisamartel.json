@@ -1,0 +1,15 @@
+{
+  "firstName": "Marisa",
+  "lastName": "Martel Oh",
+  "nickName": false,
+  "privateName": false,
+  "picture": "images/marisa_marteloh.jpg",
+  "privatePicture": false,
+  "email": "marisa.marteloh@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "marisamartel",
+  "privateGithub": false,
+  "superpower" : "can lick my elbow",
+  "academicinterests": "history and english major who enjoys reading post-colonial literature"
+  
+}
