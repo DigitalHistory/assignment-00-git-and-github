@@ -1,0 +1,15 @@
+{
+  "firstName": "Mahdi",
+  "lastName": "Chowdhury",
+  "nickName": "Mahi",
+  "privateName": false,
+  "picture": "images/mahdi_chowdhury.jpg",
+  "privatePicture": false,
+  "email": "mahdi.chowdhury@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "mahdic",
+  "privateGithub": false,
+  "superpower" : "Making cookies",
+  "academicinterests": "South Asian and Middle Eastern Histories; Islam and Modernity; Cinema Studies; Critical Theory"
+  
+}
