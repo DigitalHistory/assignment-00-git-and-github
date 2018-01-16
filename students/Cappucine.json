@@ -1,0 +1,15 @@
+{
+  "firstName": "Eva",
+  "lastName": "Ferguson",
+  "nickName": "Cappucine",
+  "privateName": false,
+  "picture": "images/cappucine_ferguson.jpg",
+  "privatePicture": false,
+  "email": "cappucine.ferguson@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "Cappucine",
+  "privateGithub": false,
+  "superpower" : "dancing for 24 hours straight",
+  "academicinterests": "Revolutions, Philosophy, Environmental studies, Politics, Film and media history, photography, "
+
+}
