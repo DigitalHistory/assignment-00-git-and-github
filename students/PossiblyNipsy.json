@@ -1,0 +1,15 @@
+{
+  "firstName": "Dylan",
+  "lastName": "Page",
+  "nickName": false,
+  "privateName": false,
+  "picture": "images/dylan_page.jpg",
+  "privatePicture": false,
+  "email": "dylan.page@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "PossiblyNipsy",
+  "privateGithub": false,
+  "superpower" : "Video editing; Creating retro/80s-90s artwork; Collecting Lego Star Wars sets; Streaming/Commentating on Twitch; Speedrunning Hotline Miami (I was #34 globally for a while!)",
+  "academicinterests": "Political theory, voting patterns/statistics, logic and argumentation, and 19th/20th-century history."
+
+}

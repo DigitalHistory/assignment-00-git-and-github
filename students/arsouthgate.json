@@ -1,0 +1,15 @@
+{
+"firstName": "Alexandra",
+"lastName": "Southgate",
+"nickName": "Alex",
+"privateName": false,
+"picture": "images/alexandra_southgate.jpg",
+"privatePicture": false,
+"email": "alexandra.southgate@mail.utoronto.ca",
+"privateEmail": false,
+"github": "arsouthgate",
+"privateGithub": false,
+"superpower" : "dog whisperer",
+"academicinterests": "gender and sexuality, the Cold War, law."
+
+}
