@@ -47,10 +47,11 @@ var studentSchema = {
 
 gitConfig(function (err, config) {
   if (err) return done(err);
+  console.log(config);
   if (config.user.name) {name = config.user.name;}
   if (config.user.email) {email = config.user.email;}
   if (config.github.user) {githubid = config.github.user;}
-  
+
 });
 /////////////////////////////
 ///
@@ -62,6 +63,7 @@ var name,email,githubid;
 describe('Git Checks', function() {
   var  gitCheck;
   before(function(done) {
+    this.timeout(0);
     gitCommits(repoPath)
       .on('data', function (commit) {
         if (!matchesProfEmail(commit.author.email, ignoreCommitEmails))
@@ -123,7 +125,7 @@ describe('JSON Checks', function() {
     expect(j.picture, "your JSON file does not record your picture URL or path").to.be.a("string").that.is.not.empty;
   });
 
-  
+
 });
 
 describe('Reflection Checks (not required unless you are attempting an "A" grade!)', function() {
@@ -136,21 +138,3 @@ describe('Reflection Checks (not required unless you are attempting an "A" grade
     expect(hwc(content), "").to.be.at.least(275);
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
