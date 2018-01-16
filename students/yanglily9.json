@@ -3,12 +3,13 @@
   "lastName": “Yang”,
   "nickName": “Lily”,
   "privateName": true,
-  "picture": “images/Li_Yang.jpg”,
+  "picture": "images/Li_Yang.jpg",
   "privatePicture": true,
-  "email": “lilili.yang@mail.utoronto.ca”,
+  "email": “lilyli.yang@mail.utoronto.ca",
   "privateEmail": true,
   "github": “yanglily9”,
   "privateGithub": true,
   "superpower" : “Eating”,
   "academicinterests": “History”
+  
 }
