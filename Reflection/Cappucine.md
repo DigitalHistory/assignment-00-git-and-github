@@ -1,0 +1,10 @@
+# Reflection
+
+Respond to each of the questions below with a carefully thought out relfection on the assignment.
+
+## Question 1
+#### the basic layout of flipping cards would be used more interestingly as a way for organizing research data, or compilation data, or even connecting professionals in the field of study. I can see this being useful in forming cards that organize the way you can access historical data on the internet, because it can be a big place where data is hidden in nooks, and sometimes google can’t do absolutely everything. One card, for example, would contain a topic, its best web sources for it, its Wikipedia, its most notable authors on it, its discussion in news sources, and links to topics of relevance. Ideally, there are sections each is in, and there can also be a card for historians/scholars themselves, and other more specific topics. I think this would be a great way for students to access organized data on topics of their choice, for professionals, and for people just getting into a topic, to get the most up-to-date information on it.  It would be worked on by various professionals and hopefully gather enough data to cover a large variety of content. 
+
+
+## Question 2
+#### The fields for the topic cards would be title of topic, web sources, notable scholars, print sources, in the news, and relevant topics. The fields for the people cards would be name, field, books, other works, and picture. The limitations would be that of course it would be difficult to create any kind of database when topics might not be able to include everything. The card layout limits my ability to have a lot of data on the card itself, but I think this could be fixed if you could click on the condensed card to bring you a more in-depth site page. Another limitation would be the amount that the user would have to scroll the page, unless they know exactly what they want. The actual use of fields don’t pose a limitation of what the project purpose is, because, I think, they can be manipulated so much for the designers interest.
