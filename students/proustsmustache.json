@@ -1,0 +1,15 @@
+{
+  "firstName": "Syed",
+  "lastName": "Shahed",
+  "nickName": "Alif",
+  "privateName": true,
+  "picture": "images/syed_shahed.jpg",
+  "privatePicture": false,
+  "email": "alif.shahed@mail.utoronto.ca",
+  "privateEmail": true,
+  "github": "proustsmustache",
+  "privateGithub": false,
+  "superpower" : "live tweeting",
+  "academicinterests": "Nationalism, Capitalism, Marxism, Mariah Carey, etc."
+
+}
