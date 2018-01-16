@@ -1,15 +1,14 @@
 {
-  "firstName": “Li”,
-  "lastName": “Yang”,
-  "nickName": “Lily”,
+  "firstName": "Li",
+  "lastName": "Yang",
+  "nickName": "Lily",
   "privateName": true,
   "picture": "images/Li_Yang.jpg",
   "privatePicture": true,
-  "email": “lilyli.yang@mail.utoronto.ca",
+  "email": "lilyli.yang@mail.utoronto.ca",
   "privateEmail": true,
-  "github": “yanglily9”,
+  "github": "yanglily9",
   "privateGithub": true,
-  "superpower" : “Eating”,
-  "academicinterests": “History”
-  
+  "superpower": "Eating",
+  "academicinterests": "History"
 }
