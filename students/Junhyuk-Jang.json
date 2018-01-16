@@ -1,0 +1,15 @@
+{
+  "firstName": "Junhyuk",
+  "lastName": "Jang",
+  "nickName": "Boris",
+  "privateName": true,
+  "picture": "images/junhyuk_jang.jpg",
+  "privatePicture": false,
+  "email": "jhboris.jang@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "Junhyuk-Jang",
+  "privateGithub": false,
+  "superpower" : "always get 6 hours of sleep, no matter how tired I am",
+  "academicinterests": "History and Archaeology"
+
+}
