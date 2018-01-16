@@ -1,9 +1,9 @@
 {
-  "firstName": "DANIEL",
-  "lastName": "GRANT",
+  "firstName": "daniel",
+  "lastName": "grant",
   "nickName": "NA",
   "privateName": false,
-  "picture": "images/DANIEL_GRANT.jpg",
+  "picture": "images/daniel_grant.jpg",
   "privatePicture": false,
   "email": "daniel.grant@mail.utoronto.ca",
   "privateEmail": false,
@@ -11,5 +11,5 @@
   "privateGithub": false,
   "superpower" : "Instantly Forgetting Things",
   "academicinterests": "Getting into a class 2 weeks late"
-  
+
 }
