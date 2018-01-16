@@ -1,0 +1,15 @@
+{
+  "firstName": "Jenny",
+  "lastName": "Seo",
+  "nickName": "Jen",
+  "privateName": false,
+  "picture": "images/jenny_seo.jpg",
+  "privatePicture": false,
+  "email": "jen.seo@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "Dottori",
+  "privateGithub": false,
+  "superpower" : "I can read my own mind.",
+  "academicinterests": "Graduating."
+
+}
