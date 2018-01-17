@@ -1,0 +1,15 @@
+{
+  "firstName": "Venessa",
+  "lastName": "Ranabahu",
+  "nickName": "shishi",
+  "privateName": false,
+  "picture": "images/venessa_ranabahu.jpg",
+  "privatePicture": false,
+  "email": "shiann.ranabahu@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "shiannr",
+  "privateGithub": false,
+  "superpower" : "I can sleep for days (I have also lived in 5 countries)",
+  "academicinterests": "Explore the world of coding"
+
+}

@@ -1,0 +1,15 @@
+{
+  "firstName": "Dany",
+  "lastName": "Ko",
+  "nickName": "",
+  "privateName": false,
+  "picture": "images/dany_ko.jpg",
+  "privatePicture": false,
+  "email": "dominique.villanueva@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "daneoraptor",
+  "privateGithub": false,
+  "superpower" : "Is a Pokemon: Munchlax by day, Snorlax by night (I like to eat and sleep).",
+  "academicinterests": "Equity Studies, History, Women & Gender Studies; outside of PoSTs, Marine Biology"
+
+}

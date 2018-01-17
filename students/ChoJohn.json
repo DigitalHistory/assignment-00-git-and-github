@@ -1,0 +1,15 @@
+{
+  "firstName": "Hoyeon",
+  "lastName": "Cho",
+  "nickName": "John Cho",
+  "privateName": false,
+  "picture": "images/john_cho.JPG",
+  "privatePicture": false,
+  "email": "hoyeon.cho@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "ChoJohn",
+  "privateGithub": false,
+  "superpower" : "Computer Science Specialist - Web Dev.",
+  "academicinterests": "Anything I can apply computer science to."
+
+}

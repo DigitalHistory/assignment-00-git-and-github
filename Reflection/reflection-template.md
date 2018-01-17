@@ -1,8 +1,6 @@
 # Reflection
 
-Respond to each of the questions below with a carefully thought out relfection on the assignment.
-
-# Reflection
+Respond to each of the questions below with a carefully thought out reflection on the assignment.
 
 ## Question 1
 #### In this assignment, we used your user input to construct a small website composed of flipping cards. Can you think of a more interesting use for this basic layout? The use you describe should serve some pedagogical or research-oriented purpose for historians or humanists.
