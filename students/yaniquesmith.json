@@ -1,0 +1,15 @@
+{
+  "firstName": "Yanique",
+  "lastName": "Smith",
+  "nickName": "Yani",
+  "privateName": true,
+  "picture": "images/yanique_smith.jpg",
+  "privatePicture": true,
+  "email": "yanique.smith@mail.utoronto.ca",
+  "privateEmail": true,
+  "github": "yaniquesmith",
+  "privateGithub": true,
+  "superpower" : "naping and awkward encounters",
+  "academicinterests": "Doing well in school... while maintaining my personal sanity"
+
+}

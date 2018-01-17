@@ -1,0 +1,15 @@
+{
+  "firstName": "Andrea",
+  "lastName": "Bermudez",
+  "nickName": false,
+  "privateName": false,
+  "picture": "images/Andrea_Bermudez.jpg",
+  "privatePicture": false,
+  "email": "andrea.bermudez@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "Zandrea97",
+  "privateGithub": false,
+  "superpower" : "Queer Hispanic Flare",
+  "academicinterests": "Equity is life; Using old things to understand new things; Disrupting normalcy"
+
+}
