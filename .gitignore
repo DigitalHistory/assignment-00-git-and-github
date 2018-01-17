@@ -16,4 +16,9 @@ utils/00-git-and-*
 /Reflection/reflection-template (1).md
 /utils/00-git-forks.json
 /utils/allstudents.json
+/utils/allstudents.js
 /package-lock.json
+.DS_Store
+.DS_Store?
+._*
+**/.DS_Store
