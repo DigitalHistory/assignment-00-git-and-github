@@ -1,0 +1,15 @@
+{
+  "firstName": "Rosalind",
+  "lastName": "Deibert",
+  "nickName": false,
+  "privateName": false,
+  "picture": "images/rosalind_deibert.jpg",
+  "privatePicture": false,
+  "email": "rosalind.deibert@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "rosalinddeibert",
+  "privateGithub": false,
+  "superpower" : "late night cramming",
+  "academicinterests": "philosophy,"
+
+}

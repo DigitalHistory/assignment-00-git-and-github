@@ -28,13 +28,13 @@ Setting up your work environment could take some time. It's best to do this well
 - download and install node.js and npm as described  [[/article/Tools.org][on the Tools page]]
 - configure git with your git and github information as described  [[https://support.gitkraken.com/start-here/profiles][here]] and [[https://support.gitkraken.com/integrations/github][here]]
 - create a fork of this repository by [[https://classroom.github.com/a/y1HlCM6k][following this link]].  Clone locally via the "Clone or Download" [[https://help.github.com/articles/cloning-a-repository/][described here]], and do your work within Atom. 
-- install the node dependencies for your project with ~npm i~ as described ...
+- install the node dependencies for your project with ~npm install~. On windows you may run into some issues.  See [[https://github.com/npm/npm/wiki/Troubleshooting][the Node website]] before coming to me for help, but I will assist where I can.  
 - run tests by executing ~npm test~ in your working directory
 - you should now see a new directory ~TestResults~, inside of which you will find a file ~testresults.html~. Open this file in a modern browser (Chrome or Firefox) to see your test results (most of the tests should fail at this point, so don't worry!).
 ** Commit your changes
 *** Add a picture of yourself to the repository
 - the picture should be named ~firstname_lastname.jpg~ (substitute your real names!) and should be placed in the ~images~ directory
-- commit this new file to the repository. You can use the command line, the git tools inside Atom, or the GitKraken interface, as you prefer. *Insert link to committing instructions in lecture notes* 
+- commit this new file to the repository. You can use the command line, the git tools inside Atom, or the GitKraken interface, as you prefer.
 
 *** Create and update your JSON file
 
