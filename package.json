@@ -4,7 +4,7 @@
   "description": "exercises for learning Github in Digital History",
   "main": "index.js",
   "scripts": {
-  "test": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults || true",
+"test": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults || true",
     "watch": "mocha --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults -w",
     "collectjson": "node utils/collectjson.js"
   },
