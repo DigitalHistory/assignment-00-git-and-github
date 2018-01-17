@@ -5,7 +5,7 @@ const gitCommits = require('git-commits'), fs=require('fs'), hwc=require('html-w
       gitConfig = require('git-config'),  gitState = require('git-state'), jsonLint = require('jsonlint');
 
 var repoPath = path.resolve(process.env.REPO || (__dirname + '/../.git'));
-var ignoreCommitEmails = "matt.prince@utoronto.ca";
+var ignoreCommitEmails = "matt.price@utoronto.ca";
 const matchesProfEmail = function (email, profEmails) {
   return (profEmails.indexOf(email) > -1);
 };
@@ -16,34 +16,7 @@ var chai=require('chai'),
     expect=chai.expect;
 chai.use(require('chai-fs'));
 
-
 var name,email,githubid;
-
-
-// declare a json schema for studen json objects
-var studentSchema = {
-  title: 'student schema v1',
-  type: 'object',
-  required: ['firstName', 'lastName', ''],
-  properties: {
-    colors: {
-      type: 'array',
-      minItems: 1,
-      uniqueItems: true,
-      items: {
-        type: 'string'
-      }
-    },
-    skin: {
-      type: 'string'
-    },
-    taste: {
-      type: 'number',
-      minimum: 5
-    }
-  }
-};
-
 
 gitConfig(function (err, config) {
   if (err) return done(err);
@@ -53,6 +26,8 @@ gitConfig(function (err, config) {
   if (config.github.user) {githubid = config.github.user;}
 
 });
+
+
 /////////////////////////////
 ///
 ///  tests start here
@@ -91,7 +66,7 @@ describe('Git Checks', function() {
       expect(githubid, "your Github user name has not been set").not.to.be.undefined;
   });
 
-  it('All changes in current directory should be committed to Git (OK for this to fail while you are still working)', function() {
+  it('All files in current directory should be committed to Git (OK for this to fail while you are still working)', function() {
     expect(gitCheck.dirty, "looks like you have changed some files and not committed the changes yet").to.equal(0);
   });
 
