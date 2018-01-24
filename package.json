@@ -4,8 +4,8 @@
   "description": "exercises for learning Github in Digital History",
   "main": "index.js",
   "scripts": {
-  "test": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults || true",
-    "watch": "mocha --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults -w",
+    "test": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults || true",
+    "watch": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults -w",
     "collectjson": "node utils/collectjson.js"
   },
   "author": "Matt Price",
@@ -21,7 +21,9 @@
     "json-validation": "1.0.4",
     "jsonlint": "1.6.2",
     "mocha": "4.0.1",
-    "mocha-pretty-spec-reporter": "0.1.0-beta.2",
-    "mochawesome": "3.0.0"
+    "mocha-pretty-spec-reporter": "0.1.0-beta.2"
+  },
+  "devDependencies": {
+    "mochawesome": "^3.0.0"
   }
 }

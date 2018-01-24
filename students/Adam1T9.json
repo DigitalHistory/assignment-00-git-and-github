@@ -1,0 +1,15 @@
+{
+  "firstName": "Adam",
+  "lastName": "Nangini",
+  "nickName": "Adam",
+  "privateName": false,
+  "picture": "images/adam_nangini.jpg",
+  "privatePicture": false,
+  "email": "adam.nangini@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "Adam1T9",
+  "privateGithub": false,
+  "superpower" : "Operating a manual transmission",
+  "academicinterests": "History and Philosophy"
+
+}
