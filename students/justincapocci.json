@@ -1,0 +1,14 @@
+{
+  "firstName": "Justin",
+  "lastName": "Capocci",
+  "nickName": "Capo",
+  "privateName": false,
+  "picture": "images/justin_capocci.jpg",
+  "privatePicture": false,
+  "email": "justin.capocci@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "justincapocci",
+  "privateGithub": false,
+  "superpower" : "Video game marathoning",
+  "academicinterests": "History/Classics"
+}

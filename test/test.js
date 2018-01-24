@@ -5,7 +5,7 @@ const gitCommits = require('git-commits'), fs=require('fs'), hwc=require('html-w
       gitConfig = require('git-config'),  gitState = require('git-state'), jsonLint = require('jsonlint');
 
 var repoPath = path.resolve(process.env.REPO || (__dirname + '/../.git'));
-var ignoreCommitEmails = "matt.prince@utoronto.ca";
+var ignoreCommitEmails = "matt.price@utoronto.ca";
 const matchesProfEmail = function (email, profEmails) {
   return (profEmails.indexOf(email) > -1);
 };
@@ -16,42 +16,18 @@ var chai=require('chai'),
     expect=chai.expect;
 chai.use(require('chai-fs'));
 
-
 var name,email,githubid;
-
-
-// declare a json schema for studen json objects
-var studentSchema = {
-  title: 'student schema v1',
-  type: 'object',
-  required: ['firstName', 'lastName', ''],
-  properties: {
-    colors: {
-      type: 'array',
-      minItems: 1,
-      uniqueItems: true,
-      items: {
-        type: 'string'
-      }
-    },
-    skin: {
-      type: 'string'
-    },
-    taste: {
-      type: 'number',
-      minimum: 5
-    }
-  }
-};
-
 
 gitConfig(function (err, config) {
   if (err) return done(err);
+  console.log(config);
   if (config.user.name) {name = config.user.name;}
   if (config.user.email) {email = config.user.email;}
   if (config.github.user) {githubid = config.github.user;}
-  
+
 });
+
+
 /////////////////////////////
 ///
 ///  tests start here
@@ -62,6 +38,7 @@ var name,email,githubid;
 describe('Git Checks', function() {
   var  gitCheck;
   before(function(done) {
+    this.timeout(0);
     gitCommits(repoPath)
       .on('data', function (commit) {
         if (!matchesProfEmail(commit.author.email, ignoreCommitEmails))
@@ -89,7 +66,7 @@ describe('Git Checks', function() {
       expect(githubid, "your Github user name has not been set").not.to.be.undefined;
   });
 
-  it('All changes in current directory should be committed to Git (OK for this to fail while you are still working)', function() {
+  it('All files in current directory should be committed to Git (OK for this to fail while you are still working)', function() {
     expect(gitCheck.dirty, "looks like you have changed some files and not committed the changes yet").to.equal(0);
   });
 
@@ -123,7 +100,7 @@ describe('JSON Checks', function() {
     expect(j.picture, "your JSON file does not record your picture URL or path").to.be.a("string").that.is.not.empty;
   });
 
-  
+
 });
 
 describe('Reflection Checks (not required unless you are attempting an "A" grade!)', function() {
@@ -136,21 +113,3 @@ describe('Reflection Checks (not required unless you are attempting an "A" grade
     expect(hwc(content), "").to.be.at.least(275);
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
