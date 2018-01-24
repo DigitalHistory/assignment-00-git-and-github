@@ -1,0 +1,15 @@
+{
+  "firstName": "Samuel",
+  "lastName": "Honer",
+  "nickName": "Sam",
+  "privateName": false,
+  "picture": "images/Samuel_Honer.jpg",
+  "privatePicture": false,
+  "email": "sam.honer@mail.utoronto.ca",
+  "privateEmail": false,
+  "github": "gentlemanskeleton",
+  "privateGithub": false,
+  "superpower" : "Finding deals on computer components.",
+  "academicinterests": "The impact that government policy has over technology and digital copyright."
+
+}
