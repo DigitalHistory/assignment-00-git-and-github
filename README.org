@@ -1,0 +1,73 @@
+* Git and Github Assignment: Goal
+This is an assignment for [[http://digital.hackinghistory.ca][Digital History]], a digital humanities course taught in the History Department at the University of Toronto.  If you're a teacher, feel free to fork and repurpose for your own courses.  If you're a student, keep reading!
+
+The purpose of this assignment is to familiarize you with the tools we will be using throughout the class. These are basic parts of every developers toolkit, so understanding them will take you a long way. 
+
+As a side effect, changes to this repository will show up in a simple, publicly accessible website visible at https://digitalhistory.github.io/00-git-and-github/. Use the privacy options described in [[Details]] to avoid sharing info you don't want to share.
+
+* Expectations
+This assignment is graded pass/fail. You will only get credit if *your repository passes all relevant tests.* To pass the assignment, you must:
+- successfully install git and bash on your computer
+- successfully install node and npm on your computer
+- fork this repository and clone a local copy
+- enable automated testing by installing all npm packages
+- add to the repository a text file containing structured information about you
+- add to the repository a profile picture of yourself
+- commit both these changes
+- *students attempting an A only:* answer reflection questions
+- push all your changes to Github
+- submit your assignment via Github Pull Request
+
+* Details
+
+** Setup
+Setting up your work environment could take some time. It's best to do this well in advance of the assignment deadline.
+
+- download the Atom editor and install the course extensions package as described [[/article/Tools.org][on the Tools page]]
+- install gitkraken as described [[https://support.gitkraken.com/how-to-install][here]]
+- download and install node.js and npm as described  [[/article/Tools.org][on the Tools page]]
+- configure git with your git and github information as described  [[https://support.gitkraken.com/start-here/profiles][here]] and [[https://support.gitkraken.com/integrations/github][here]]
+- create a fork of this repository by [[https://classroom.github.com/a/y1HlCM6k][following this link]].  Clone locally via the "Clone or Download" [[https://help.github.com/articles/cloning-a-repository/][described here]], and do your work within Atom. 
+- install the node dependencies for your project with ~npm i~ as described ...
+- run tests by executing ~npm test~ in your working directory
+- you should now see a new directory ~TestResults~, inside of which you will find a file ~testresults.html~. Open this file in a modern browser (Chrome or Firefox) to see your test results (most of the tests should fail at this point, so don't worry!).
+** Commit your changes
+*** Add a picture of yourself to the repository
+- the picture should be named ~firstname_lastname.jpg~ (substitute your real names!) and should be placed in the ~images~ directory
+- commit this new file to the repository. You can use the command line, the git tools inside Atom, or the GitKraken interface, as you prefer. *Insert link to committing instructions in lecture notes* 
+
+*** Create and update your JSON file
+
+In the directory ~students~, you should see a file named "template.json". Copy the contents of this file to a new file, which should be named ~yourgithubid.json~ (substitute your *actual* Github user id for "yourgithubid"!). This file needs to meed stringent criteria, so be very careful filling out the information:
+- the resultant file must be valid JSON, which means that key names must be enclosed in double quotes, and values myust either be enclosed in double quotes as well, or use the special Javascript values "true" or "false" in the case of the ~privateXXX~ values.  Please *do not* enclose ~true~ and ~false~ in quotes, or they will not work as expected.  Avoid using ~"~ and ~'~ except as enclosing markers around your keys and values, as they can easily lead to syntax errors.
+- the fields "firstName", "lastName", "email", "github", and "photo" *must* all be filled out (no exceptions).
+- ~firstName~ and ~lastName~ should be the same as the names I will find in my official class roster from U of T
+- use the ~nickName~ field if either of the two is true for you:
+  - you prefer to be called by a name that is *not* the name I'll find in my roster
+  - you do not wish to share your full name publicly on the class roster website.
+- the "privateXXX" fields control what information will be displayed on the public website.Any field set to "true" will mark that information as public. If you set ~privateName~ to true, your ~nickName~ will still be displayed, so be sure to use a ~nickName~ value that you are willing to make public.  This is a low-traffic website which will only be available during this semester, but if you do not want to share information with your classmates, or have serious concerns about information becoming public, you should be sure to fill these fields out
+- the ~superPowers~ field is not mandatory, but it will help me to remember who you are, so please do fill it out! Use it to tell the class something interesting and/or memorable about yourself. Note that this field cannot be made private.  
+
+When you are done, commit your changes as above.
+
+
+*** Answer Reflection Questions ("A" Bundle only)
+*This section is only required for students who are attempting to achieve an "A" grade.* If that is not your goal, you do not need to worry about this part, or about tailing tests from this section.
+
+In the folder "Reflection", you will find a file named ~reflection-template.md~. Copy the file contents to a new file named ~yourgithubid.md~ (again, use your real Github id instead of ~githubid~!).  This file contains two subheadings, each of which is a question. Answer each of these questions in a response of approximately 150 words. Your responses should be thoughtful and perceptive, and written at a level that would normally result in a grade of B 
+** Run tests
+At any point in the process, you can re-run your tests by executing ~npm test~ from a terminal in the working directory. Visit the file ~TestResults/results.html~ in a browser to see your updated results.  To have the tests run continuously whenever you modify a file, run ~npm run watch~ instead (you will still have to refresh the web page to see the new results!).
+
+** Building the Website
+
+You may want to see what your profile will look like on the website when it goes live. You can get a preview this with the following command: 
+
+~npm run collectjson~
+
+Now open the file ~index.html~ in your browser. You should see your card along with the dummy cards already provided. 
+
+** Handing in
+
+As mentioned above: when you are finished -- when your code passes all the tests -- submit your code via pull request. You can initiate the pull request either [[https://support.gitkraken.com/working-with-repositories/pull-requests][via gitKraken]] or [[https://help.github.com/articles/about-pull-requests/][directly on the Github website]]. If you choose the latter route (which you may have to do if gitKraken does not run stably on your laptop), please note that you will first have to ~git push~ your changes from Atom or the command line. 
+
+Tests will also run upon submission of your pull request, and a notification will appear on the Pull Request page indicating whether or not they have passed .  *Please note that the build process may be very slow or even fail during periods of heavy load, e.g., immediately before deadlines.* For this reason it is better to familiarize yourself with the testing process and run them locally, yourself, before handing in your work.  

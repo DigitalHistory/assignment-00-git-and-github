@@ -1,0 +1,15 @@
+{
+  "firstName": "Naruto",
+  "lastName": "",
+  "nickName": "Naruto",
+  "privateName": true,
+  "picture": "https://dw9to29mmj727.cloudfront.net/misc/newsletter-naruto3.png",
+  "privatePicture": false,
+  "email": "matt.price@utoronto.ca",
+  "privateEmail": true,
+  "github": "titaniumbones",
+  "privateGithub": false,
+  "superpower" : "jinchūriki, ninjutsu",
+  "academicinterests": "Ideological currents within martial arts narratives; military history in pre-historical Japan; physiology of spirit possession."
+  
+}

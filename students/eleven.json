@@ -1,0 +1,10 @@
+{ "firstName" : "Secret",
+  "nickName": "eleven",
+  "lastName": "Name",
+  "privateName": true,
+  "picture": "https://typeset-beta.imgix.net/rehost%2F2016%2F9%2F13%2Fe8f7ecb0-3f69-4127-921e-9411af402554.jpg?w=800&h=800&fit=crop&crop=faces&auto=format&q=70",
+  "email": "eleven@utoronto.ca",
+  "github": "eleven",
+  "superpower": "Telekinesis, Interdimensional Transit",
+  "academicinterests": "High-energy physics, "
+}

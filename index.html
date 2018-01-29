@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Students</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
+
+
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+
+    <style>
+      
+      .row-eq-height {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display:         flex;
+      }
+      .card {
+          border: 1px solid gray ;
+          width: 1rem;
+          margin: 1rem;
+      }
+      img.card-img-top {
+          max-height: 400px;
+          /* object-fit: none; */
+          /* object-position: 50% 0; */
+      }
+
+      .container {
+          margin-top: 50px;
+      }
+    </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">His393 Class Roster, 2017</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+
+
+  <div class="container">
+
+    <div id="cardcontainer" class="row">
+
+
+    </div>       <!-- cardcontainer -->
+  </div>         <!-- container -->
+
+  <script type-"text/javascript" src="utils/allstudents.js"></script>
+  
+  <script type="text/javascript">
+   var students = [];
+
+   $(function() {
+       $.each(nativestudents, function(i, s) {
+           //var updatedList = JSON.stringify(jsonList.list, function (key, value) {return (value === undefined) ? "" : value});
+           var tblRow = `<tr> 
+        <td>${(s.firstName) ? s.firstName : ''}</td>
+        <td>${(s.lastName) ? s.lastName : ''}</td>
+        <td>${s.nickName}</td>
+        <td><a href="mailto:${s.email}">${s.email}</a></td>
+        <td><a href="https://github.com/${s.github}">${s.github}</a></td>
+</tr>`;
+           $(tblRow).appendTo("#studentlist tbody");
+           students.push(s);
+           var nickString = ( s.nickName ) ? `"` + s.nickName + `"` : '';
+           var spString = (s.superpower ) ? s.superpower : '';
+           var aiString = (s.academicinterests ) ? s.academicinterests : '';
+                  
+           var card = `
+  <div class="card" style="width:20rem; margin: 1rem; border: 1px solid gray;" > 
+  <div class="card-header">
+    ${(s.nickName) ? s.nickName : s.firstName}
+  </div>
+  <img class="card-img-top"  src="${s.picture}" alt="Card image of ${s.fullName}">
+<div class="card-body">
+    <h4 class="card-title">${(s.firstName) ? s.firstName : nickString} ${(s.lastName) ? s.lastName : ''}</h4>
+    <p class="card-text"><b>Powers:</b> ${s.superpower}</p>
+    <p class="card-text"><b>Academic Interests:</b> ${s.academicinterests}</p>
+</div> <!-- card-body -->
+<div class="card-footer text-center">
+    <a href="https://github.com/${s.github}" class="btn btn-primary">Github</a>
+    <a href="mailto:${s.email}" class="btn btn-primary">Email</a>
+</div>  <!-- card-footer -->
+</div>  <!-- card -->
+                    </div>
+`;
+
+           $(card).appendTo("#cardcontainer");
+           console.log(s);
+       });
+   });
+
+   //var myjson = $.getJSON('allstudents.json');
+   // console.log(" my json is: " + myjson);
+  </script>
+</body>
+
+</html>
+
+
+
