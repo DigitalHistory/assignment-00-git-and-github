@@ -2,9 +2,9 @@
 
 const path = require('path');
 const gitCommits = require('git-commits'), fs=require('fs'), hwc=require('html-word-count'),
-      gitConfig = require('git-config'),  gitState = require('git-state'), jsonLint = require('jsonlint');
+      gitConfig = require('git-config'), gitState = require('git-state'), jsonLint = require('jsonlint');
 
-var repoPath = path.resolve(process.env.REPO || (__dirname + '/../.git'));
+const repoPath = path.resolve(process.env.REPO || (__dirname + '/../.git'));
 var ignoreCommitEmails = "matt.price@utoronto.ca";
 const matchesProfEmail = function (email, profEmails) {
   return (profEmails.indexOf(email) > -1);
@@ -18,15 +18,27 @@ chai.use(require('chai-fs'));
 
 var name,email,githubid;
 
+
+
+
+
+
 gitConfig(function (err, config) {
-  if (err) return done(err);
+  if (err) return done(err); 
   console.log(config);
-  if (config.user.name) {name = config.user.name;}
-  if (config.user.email) {email = config.user.email;}
-  if (config.github.user) {githubid = config.github.user;}
+  if (config.user.name) { name = config.user.name; }
+  if (config.user.email) { email = config.user.email; }
+  if (config.github.user) { githubid = config.github.user; }
 
 });
 
+let f = function () {
+  return console.log("hello");
+};
+
+f
+
+console.log("hello");
 
 /////////////////////////////
 ///
@@ -39,7 +51,7 @@ describe('Git Checks', function() {
   var  gitCheck;
   before(function(done) {
     this.timeout(0);
-    gitCommits(repoPath)
+    gitCommits(repoPath) 
       .on('data', function (commit) {
         if (!matchesProfEmail(commit.author.email, ignoreCommitEmails))
         {
@@ -76,6 +88,16 @@ describe('Git Checks', function() {
   });
 });
 
+function jlint(s) {
+  try {
+    jsonLint.parse(fs.readFileSync(s, "utf-8"))
+  }
+  catch (e) {
+    return e
+  }
+}
+
+
 describe('JSON Checks', function() {
   before(function() {
     // read the JSON file
@@ -86,10 +108,17 @@ describe('JSON Checks', function() {
     expect(p).to.be.a.file();
   });
 
-  it('JSON file should be valid JSON', function() {
+  it('JSON file should be valid JSON -- please check quotation marks, colons, commas, etc.', function() {
     let p = `students/${githubid}.json`;
     let f = fs.readFileSync(p, "utf-8");
-    expect(jsonLint.parse(fs.readFileSync(p, "utf-8"))).to.not.be.a('error');
+    expect(jlint(p), `Do your best to make sense of the error message below. If you have
+created a syntax error, the debugger will try to find the mistake, but
+often the error will only be detected several lines after its *actual*
+source. Be on the lookout especially for mising quotation marks,
+ocmmas, braces ("{}"), etc. Often the *closing* parenthsis, brace, or
+quotation mark will be missing and cause an error.
+
+`).to.not.be.an('error');
   });
 
   it('JSON file should contain name, email,github, and picture', function() {
