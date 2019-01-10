@@ -4,57 +4,114 @@
 <head>
     <meta charset="UTF-8" />
     <title>Students</title>
-
+    <!-- external resources -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
-
-    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
-
+    <!-- styling -- this may be hard for you to understand right now -->
     <style>
-      
-      .row-eq-height {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display:         flex;
-      }
-      .card {
-          border: 1px solid gray ;
-          width: 1rem;
-          margin: 1rem;
-      }
-      img.card-img-top {
-          max-height: 400px;
-          /* object-fit: none; */
-          /* object-position: 50% 0; */
-      }
 
-      .container {
-          margin-top: 50px;
-      }
+     body {
+         font-family: Roboto, sans-serif;
+         color: rgb(73,80,87);
+     }
+     .navbar {
+         position: fixed;
+         width: 100%;
+         background-image: linear-gradient(#04519b, #033C73 60%, #02325f);
+         top:0;
+         color: white;
+         height: 56px;
+         box-sizing: border-box;
+         text-align: center;
+         font-size: 1.8rem;
+         margin-bottom:
+     }
+
+     @media screen and (max-width: 375px) {
+         .navbar {
+             font-size: 1.5em;
+         }
+     }
+     .container {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+         grid-gap: 20px;
+         align-items: stretch;
+         margin-top: 60px;
+     }
+     .card {
+         display: grid;
+         grid-template-rows: 50px auto 1fr 50px;
+         border: 1px solid gray ;
+         box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+         border-radius: 3px;
+         
+     }
+
+     
+     .card-header {
+         border-bottom: 1px solid rgba(0,0,0,0.125);
+         background-color: rgba(0,0,0,0.03);
+     }
+     .card-header h2 {
+         text-align: center;
+         font-size: 1rem;
+         font-weight: 400;
+         
+     }
+
+     img.card-img {
+         /* max-height: 400px; */
+         width: 100%;
+         height: 300px;
+         object-fit: cover;
+         /* object-position: 50% 0; */
+     }
+
+     .card-body {
+         padding: 0 10px;
+     }
+     
+     .card-footer {
+         display: grid;
+         align-items: center;
+         grid-template-columns: repeat(2, 75px);
+         grid-auto-flow: column;
+         grid-gap: 10px;
+         background-color: rgba(0,0,0,0.03);
+         padding: 5px; 25px; 5px; 25px;
+         border-top: 1px solid rgba(0,0,0,0.125);
+     }
+     a.btn {
+         border-radius: 0.2em;
+         box-sizing: border-box;
+         text-decoration: none;
+         font-family: 'Roboto', sans-serif;
+         font-weight:400;
+         color: #FFFFFF;
+         background-color: #3369ff;
+         box-shadow: inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+         text-align: center;
+         position: relative;
+         line-height: 30px;
+     }
+
     </style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">His393 Class Roster, 2017</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar">
+      His393 Class Roster, 2019
   </nav>
 
 
 
-  <div class="container">
+  <div id="cardcontainer" class="container">
 
-    <div id="cardcontainer" class="row">
-
-
-    </div>       <!-- cardcontainer -->
-  </div>         <!-- container -->
+      
+  </div>       <!-- cardcontainer -->
 
   <script type-"text/javascript" src="utils/allstudents.js"></script>
   
@@ -62,47 +119,37 @@
    var students = [];
 
    $(function() {
-       $.each(nativestudents, function(i, s) {
+       $.each(studentsArray, function(i, s) {
            //var updatedList = JSON.stringify(jsonList.list, function (key, value) {return (value === undefined) ? "" : value});
-           var tblRow = `<tr> 
-        <td>${(s.firstName) ? s.firstName : ''}</td>
-        <td>${(s.lastName) ? s.lastName : ''}</td>
-        <td>${s.nickName}</td>
-        <td><a href="mailto:${s.email}">${s.email}</a></td>
-        <td><a href="https://github.com/${s.github}">${s.github}</a></td>
-</tr>`;
-           $(tblRow).appendTo("#studentlist tbody");
            students.push(s);
            var nickString = ( s.nickName ) ? `"` + s.nickName + `"` : '';
            var spString = (s.superpower ) ? s.superpower : '';
            var aiString = (s.academicinterests ) ? s.academicinterests : '';
-                  
+           let name = (s.fullName || s.nickName);       
            var card = `
-  <div class="card" style="width:20rem; margin: 1rem; border: 1px solid gray;" > 
-  <div class="card-header">
-    ${(s.nickName) ? s.nickName : s.firstName}
-  </div>
-  <img class="card-img-top"  src="${s.picture}" alt="Card image of ${s.fullName}">
-<div class="card-body">
-    <h4 class="card-title">${(s.firstName) ? s.firstName : nickString} ${(s.lastName) ? s.lastName : ''}</h4>
-    <p class="card-text"><b>Powers:</b> ${s.superpower}</p>
-    <p class="card-text"><b>Academic Interests:</b> ${s.academicinterests}</p>
-</div> <!-- card-body -->
-<div class="card-footer text-center">
-    <a href="https://github.com/${s.github}" class="btn btn-primary">Github</a>
-    <a href="mailto:${s.email}" class="btn btn-primary">Email</a>
-</div>  <!-- card-footer -->
+<div class="card" >
+    <div class="card-header">
+        <h2> ${(s.nickName) ? s.nickName : s.firstName}</h2>
+    </div>
+    <img class="card-img"  src="${s.picture}" title="${name}" alt="${name ? 'Image of ' + name : 'No name'}">
+    <div class="card-body">
+        <h4 class="card-title">${(s.firstName) ? s.firstName : nickString} ${(s.lastName) ? s.lastName : ''}</h4>
+        <p><b>Powers:</b> ${spString}</p>
+        <p><b>Academic Interests:</b> ${aiString}</p>
+    </div> <!-- card-body -->
+    <div class="card-footer">
+        <a href="https://github.com/${s.github}" class="btn btn-primary">Github</a>
+        <a href="mailto:${s.email}" class="btn btn-primary">Email</a>
+    </div>  <!-- card-footer -->
 </div>  <!-- card -->
-                    </div>
-`;
+</div>
+           `;
 
            $(card).appendTo("#cardcontainer");
            console.log(s);
        });
    });
 
-   //var myjson = $.getJSON('allstudents.json');
-   // console.log(" my json is: " + myjson);
   </script>
 </body>
 
