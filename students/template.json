@@ -3,7 +3,7 @@
   "lastName": "Student",
   "nickName": "Keener",
   "privateName": false,
-  "picture": "images/some_picture.jpg",
+  "picture": "images/template.jpg",
   "privatePicture": false,
   "email": "student@mail.utoronto.ca",
   "privateEmail": false,
