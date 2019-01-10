@@ -89,7 +89,7 @@ function sanitizeJSON (s) {
 readAll('students','.json');
 
 // and now, finally, write the data structure to `utils/allstudents.js`
-fs.writeFile('utils/allstudents.js', 'var nativestudents= ' + JSON.stringify(studentArray) + ';', function(err) {
+fs.writeFile('utils/allstudents.js', 'var studentsArray= ' + JSON.stringify(studentArray) + ';', function(err) {
   if(err) {
     return console.log(err);
   } else
