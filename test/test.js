@@ -149,8 +149,8 @@ describe('Reflection Checks (not required unless you are attempting an "A" grade
     let r = `Reflection/${githubid}.md`;
     expect(r, `I can't find the file ${r}`).to.be.a.file();
   });
-  it('The total word count for your reflection should be at least 275', function() {
+  it('The total word count for your reflection should be around 525 (give or take)', function() {
     let content=fs.readFileSync(`Reflection/${githubid}.md`, 'utf-8');
-    expect(hwc(content), '').to.be.at.least(275);
+    expect(hwc(content), '').to.be.approximately(525,100);
   });
 });
