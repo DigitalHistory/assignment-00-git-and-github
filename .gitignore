@@ -4,8 +4,8 @@
 /Reflection/titaniumbones.md
 /experiments/
 /node_modules/
+package-lock.json
 utils/allstudents.js
-
 /utils/.#.#parsestudents.json
 /utils/.#parsestudents.json
 /utils/00-git-and-github-Cappucine/
@@ -16,4 +16,9 @@ utils/00-git-and-*
 /Reflection/reflection-template (1).md
 /utils/00-git-forks.json
 /utils/allstudents.json
+/utils/allstudents.js
 /package-lock.json
+.DS_Store
+.DS_Store?
+._*
+**/.DS_Store

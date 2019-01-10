@@ -1,43 +1,58 @@
 // require modules
-var path = require('path'), fs=require('fs'), util=require('util');
+// `path` provides some utilities for finding files on your harddrive (or on the web)
+// `fs` allows you to access your local hard drive's filesystem
+var path = require('path'), fs=require('fs');
 
 // create empty array to hold students
-var studentArray = new Array();;
+// this array lives in the "global namespace".
+// that makes recursion in `readAll` a little bit simpler
+var studentArray = new Array();
 
 /**
  * recursively reads in json files and assembles it in allstudents.json
  * @todo: parse secret info and move somewhere else
- * @todo: consider adding git hook to od this automatially
+ * @todo: consider adding git hook to do this automatially
  */
 function readAll(startPath,filter){
+  // declare variables
   let jsonContent, contents;
 
+  // check to make sure that the startpath variable is a real directory
   if (!fs.existsSync(startPath)){
-    console.log("no dir ",startPath);
+    console.log('no dir ',startPath);
     return;
   }
+  // make a list of all the fles in the start directory
+  let files=fs.readdirSync(startPath);
+  // loop over the list of files
+  for (let i=0;i<files.length;i++){
+    // get some info about the current file
+    let filename=path.join(startPath,files[i]);
+    let stat = fs.lstatSync(filename);
 
-  var files=fs.readdirSync(startPath);
-  for(var i=0;i<files.length;i++){
-    var filename=path.join(startPath,files[i]);
-    var stat = fs.lstatSync(filename);
+    // recursion: if the current `file` is actually a directory, run the current
+    // function using that directory.  
     if (stat.isDirectory()){
       readAll(filename,filter); //recurse
     }
+    // otherwise get the info form the 
     else if (filename.indexOf(filter)>=0) {
       contents = fs.readFileSync(filename);
-      // Define to JSON type
+      // read the file and interpret it as a JSON data structure
       jsonContent = JSON.parse(contents);
+      // erase all the private data so it doesn't get shown to the public
       studentArray.push(sanitizeJSON(jsonContent));
-    };
-  };
-};
+    }
+  }
+}
 
 /**
  * clean up private info
  */
 function sanitizeJSON (s) {
   let p = {};
+
+  // only record names if it's not private
   if (!s.privateName) {
     p.firstName = s.firstName;
     p.lastName = s.lastName;
@@ -47,12 +62,14 @@ function sanitizeJSON (s) {
   }
   p.nickName = s.nickName;
   p.privateName = s.privateName;
+  // same for the picture
   if (! s.privatePicture) {
     p.picture = s.picture;
   } else {
     p.picture = '';
   }
-  p.privateName = s.privateName;
+  p.privatePicture = s.privatePicture;
+  // etc. 
   if (! s.privateEmail) {
     p.email = s.email;
   }
@@ -66,23 +83,18 @@ function sanitizeJSON (s) {
   return p;
 }
 
+// above we just defined a couple of  functions, but
+// we didn't actually do anything.
+// here, we finally "call" the function and do the work. 
 readAll('students','.json');
 
-// console.log(studentArray);
-
-// jsObj = {"students": studentArray};
-// fs.writeFile("utils/allstudents.json", JSON.stringify(jsObj), function(err) {
-//   if(err) {
-//     return console.log(err);
-//   }
-// });
-
-fs.writeFile("utils/allstudents.js", "var nativestudents= " + JSON.stringify(studentArray) + ";", function(err) {
+// and now, finally, write the data structure to `utils/allstudents.js`
+fs.writeFile('utils/allstudents.js', 'var studentsArray= ' + JSON.stringify(studentArray) + ';', function(err) {
   if(err) {
     return console.log(err);
   } else
   {
-    return console.log("utils/allstudents.js successfully written")}
+    return console.log('utils/allstudents.js successfully written');}
   
 });
 
