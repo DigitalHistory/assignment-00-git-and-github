@@ -3,7 +3,9 @@
 /TestResults/
 /Reflection/titaniumbones.md
 /experiments/
-/node_modules/
+/node_modules
+/coverage
+/.nyc_output
 package-lock.json
 utils/allstudents.js
 /utils/.#.#parsestudents.json
