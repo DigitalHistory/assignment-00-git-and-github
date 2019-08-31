@@ -2,7 +2,7 @@
 var path = require('path'), fs=require('fs'), util=require('util');
 
 // create empty array to hold students
-var studentArray = new Array();;
+var studentArray = new Array();
 
 /**
  * recursively reads in json files and assembles it in allstudents.json
@@ -13,7 +13,7 @@ function readAll(startPath,filter){
   let jsonContent, contents;
 
   if (!fs.existsSync(startPath)){
-    console.log("no dir ",startPath);
+    console.log('no dir ',startPath);
     return;
   }
 
@@ -29,9 +29,9 @@ function readAll(startPath,filter){
       // Define to JSON type
       jsonContent = JSON.parse(contents);
       studentArray.push(sanitizeJSON(jsonContent));
-    };
-  };
-};
+    }
+  }
+}
 
 /**
  * clean up private info
@@ -77,12 +77,12 @@ readAll('students','.json');
 //   }
 // });
 
-fs.writeFile("utils/allstudents.js", "var nativestudents= " + JSON.stringify(studentArray) + ";", function(err) {
+fs.writeFile('utils/allstudents.js', 'var studentsArray= ' + JSON.stringify(studentArray) + ';', function(err) {
   if(err) {
     return console.log(err);
   } else
   {
-    return console.log("utils/allstudents.js successfully written")}
+    return console.log('utils/allstudents.js successfully written');}
   
 });
 
