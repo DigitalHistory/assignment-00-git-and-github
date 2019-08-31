@@ -2,9 +2,9 @@
 
 const path = require('path');
 const gitCommits = require('git-commits'), fs=require('fs'), hwc=require('html-word-count'),
-      gitConfig = require('git-config'),  gitState = require('git-state'), jsonLint = require('jsonlint');
+      gitConfig = require('git-config'), gitState = require('git-state'), jsonLint = require('jsonlint');
 
-var repoPath = path.resolve(process.env.REPO || (__dirname + '/../.git'));
+const repoPath = path.resolve(process.env.REPO || (__dirname + '/../.git'));
 var ignoreCommitEmails = "matt.price@utoronto.ca";
 const matchesProfEmail = function (email, profEmails) {
   return (profEmails.indexOf(email) > -1);
@@ -51,7 +51,7 @@ describe('Git Checks', function() {
   var  gitCheck;
   before(function(done) {
     this.timeout(0);
-    gitCommits(repoPath)
+    gitCommits(repoPath) 
       .on('data', function (commit) {
         if (!matchesProfEmail(commit.author.email, ignoreCommitEmails))
         {
