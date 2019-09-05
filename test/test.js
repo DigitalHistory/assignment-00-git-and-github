@@ -88,6 +88,16 @@ describe('Git Checks', function() {
   });
 });
 
+function jlint(s) {
+  try {
+    jsonLint.parse(fs.readFileSync(s, "utf-8"))
+  }
+  catch (e) {
+    return e
+  }
+}
+
+
 describe('JSON Checks', function() {
   before(function() {
     // read the JSON file
