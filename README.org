@@ -52,11 +52,9 @@ Setting up your work environment could take some time. It's best to do this well
   - you should now see a new directory ~TestResults~, inside of which you will find a file ~testresults.html~. Open this file in a modern browser (Chrome or Firefox) to see your test results (most of the tests should fail at this point, so don't worry!).
 ** Commit your changes
 *** Add a picture of yourself to the repository
-- the picture should be named ~firstname_lastname.jpg~ (substitute your real names!) and should be placed in the ~images~ directory
+- the picture should be named ~yourgithubid.jpg~ (substitute your real !) and should be placed in the ~images~ directory
 - commit this new file to the repository. You can use the command line, the git tools inside Atom, or the GitKraken interface, as you prefer.
-
 *** Create and update your JSON file
-
 In the directory ~students~, you should see a file named "template.json". Copy the contents of this file to a new file, which should be named ~yourgithubid.json~ (substitute your *actual* Github user id for "yourgithubid"!). This file is written in the JSON ("JavaScript Object Notation") framework, which we will learn more about later in the course. Your file will contain exactly one "JSON object", delimited by the ~{~ and ~}~ at the beginning and end of the file.  Each line of the file is called a "property" and takes the form of a "key/value pair:"
 #+begin_src js
 "key": "value",
@@ -104,9 +102,28 @@ As mentioned above: when you are finished -- when your code passes all the tests
 
 Tests will also run upon submission of your pull request, and a notification will appear on the Pull Request page indicating whether or not they have passed .  *Please note that the build process may be very slow or even fail during periods of heavy load, e.g., immediately before deadlines.* For this reason it is better to familiarize yourself with the testing process and run them locally, yourself, before handing in your work.  
 '
-* Issues to file when I get back online
 
+* For the curious: How this works
+This is a very simple example of using *structured data* to create a visual interface that, as it were, represents that data to the visitor. In this case, the "representation" takes the form of a playing card. 
 
+Each of you creates a small json file with uniform structure. Because the structure is predictable, I can build other structures on top of the data you provide. In this case, I use some primitive techniques for harvesting that data; and then I have some further code (also very simple) for looping across the data structure, creating an HTML structure for each person in the class. That HTML is then "injected" into the web page, where you can see the cards.  
 
+For privacy reasons, you don't have access to each other's information. However, if you want to, you can still see how this process works. 
 
-Annotate source code so students can investigate a little if they want.  
+** ~index.html~: The main web page
+You haven't learned about HTML yet, but the structure of this page is quite simple:
+- the ~<header>~ element contains some metadata and some very simple styling instructions in the form of CSS directives
+- the ~<body>~ is also simple, and has two main parts:
+  - a ~<nav>~ element for the blue headline
+  - a ~<div>~ element with an ~id~ attribute of ~cardcontainer~ to hold the cards
+
+If you look closely at the code, you'll see that the card container div is empty! So where do the cards actually come from? That's where the ~<script>~ tags comes in. First, we load the list of all student information (see below) by executing the trivial script in ~utils/allstudents.js~. Then, in the final ~script~ tag I "loop over" that list -- for each student, this script creates a bunch of HTMl and adds it to the ~cardcontainer~ div. 
+
+** ~utils/collectjson.js~: Gather student data
+This script reads all the json files and uses them to write a new file, ~allstudents.js~.  It might be a little hard to follow, but I've added extensive comments which might help you a little bit. 
+
+** ~utils/allstudents.js~: student data storage
+This is where the full list of students is stored. 
+
+** Testing this out yourself
+To run this yourself, you will *need* to install node.js and NPM.  Follow those instructions, then run ~npm run collectjson~ from a terminal having first navigated to the root directory of the repository. You should see a set of cards that also includes your own information.

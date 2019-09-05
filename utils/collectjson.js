@@ -17,31 +17,41 @@ let urlVal = url => new Promise((resolve, reject) =>
   urlExists(url, (err, exists) => err ? reject(err) : resolve(exists)));
 
 // create empty array to hold students
+// this array lives in the "global namespace".
+// that makes recursion in `readAll` a little bit simpler
 const studentArray = new Array();
 
 /**
  * recursively reads in json files and assembles it in allstudents.json
  * @todo: parse secret info and move somewhere else
- * @todo: consider adding git hook to od this automatially
+ * @todo: consider adding git hook to do this automatially
  */
 async function readAll(startPath,filter){
+  // declare variables
   let jsonContent, contents;
 
+  // check to make sure that the startpath variable is a real directory
   if (!fs.existsSync(startPath)){
     console.log('no dir ',startPath);
     return;
   }
+  // make a list of all the fles in the start directory
+  let files=fs.readdirSync(startPath);
+  // loop over the list of files
+  for (let i=0;i<files.length;i++){
+    // get some info about the current file
+    let filename=path.join(startPath,files[i]);
+    let stat = fs.lstatSync(filename);
 
-  var files=fs.readdirSync(startPath);
-  for(var i=0;i<files.length;i++){
-    var filename=path.join(startPath,files[i]);
-    var stat = fs.lstatSync(filename);
+    // recursion: if the current `file` is actually a directory, run the current
+    // function using that directory.  
     if (stat.isDirectory()){
       readAll(filename,filter); //recurse
     }
+    // otherwise get the info form the 
     else if (filename.indexOf(filter)>=0) {
       contents = fs.readFileSync(filename);
-      // Define to JSON type
+      // read the file and interpret it as a JSON data structure
       jsonContent = JSON.parse(contents);
       studentArray.push(await(sanitizeJSON(jsonContent)));
     }
@@ -68,6 +78,8 @@ function iexist (path) {
  */
 async function sanitizeJSON (s) {
   let p = {};
+
+  // only record names if it's not private
   if (!s.privateName) {
     p.firstName = s.firstName;
     p.lastName = s.lastName;
@@ -77,6 +89,7 @@ async function sanitizeJSON (s) {
   }
   p.nickName = s.nickName;
   p.privateName = s.privateName;
+  // same for the picture
   if (! s.privatePicture) {
     // p.picture = (false  | false) ? "true" : "false";
     // p.picture = (iexist(s.picture) || urlVal(s.picture).then(exists  => {console.log("urlval was called on " + s.picture); return exists;})) ? s.picture : '';
@@ -84,7 +97,8 @@ async function sanitizeJSON (s) {
   } else {
     p.picture = '';
   }
-  p.privateName = s.privateName;
+  p.privatePicture = s.privatePicture;
+  // etc. 
   if (! s.privateEmail) {
     p.email = s.email;
   }
@@ -98,6 +112,9 @@ async function sanitizeJSON (s) {
   return p;
 }
 
+// above we just defined a couple of  functions, but
+// we didn't actually do anything.
+// here, we finally "call" the function and do the work. 
 readAll('students','.json');
 
 // console.log(studentArray);
