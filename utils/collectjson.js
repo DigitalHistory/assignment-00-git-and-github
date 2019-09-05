@@ -1,15 +1,30 @@
 // require modules
-var path = require('path'), fs=require('fs'), util=require('util');
+const path = require('path'),
+      fs=require('fs'),
+      util=require('util'),
+      urlExists = require('url-exists');
+
+// let urlVal = async(data) => {
+//   try {
+//     const result = await urlExists(data);
+//     console.log(`Result for ${data} is ${result}`);
+//   } catch(err) {
+//     console.log(err);
+//   }
+// };
+
+let urlVal = url => new Promise((resolve, reject) => 
+  urlExists(url, (err, exists) => err ? reject(err) : resolve(exists)));
 
 // create empty array to hold students
-var studentArray = new Array();
+const studentArray = new Array();
 
 /**
  * recursively reads in json files and assembles it in allstudents.json
  * @todo: parse secret info and move somewhere else
  * @todo: consider adding git hook to od this automatially
  */
-function readAll(startPath,filter){
+async function readAll(startPath,filter){
   let jsonContent, contents;
 
   if (!fs.existsSync(startPath)){
@@ -28,15 +43,30 @@ function readAll(startPath,filter){
       contents = fs.readFileSync(filename);
       // Define to JSON type
       jsonContent = JSON.parse(contents);
-      studentArray.push(sanitizeJSON(jsonContent));
+      studentArray.push(await(sanitizeJSON(jsonContent)));
     }
   }
+  fs.writeFile('utils/allstudents.js', 'const studentsArray= ' + JSON.stringify(studentArray, null, 2) + ';', function(err) {
+    if(err) {
+      return console.log(err);
+    } else
+    {
+      return console.log('utils/allstudents.js successfully written');}
+    
+  });
+}
+
+function iexist (path) {
+  // console.log(path);
+  rv = fs.existsSync(path);
+  // console.log ("return vlaue is " + rv);
+  return rv;
 }
 
 /**
  * clean up private info
  */
-function sanitizeJSON (s) {
+async function sanitizeJSON (s) {
   let p = {};
   if (!s.privateName) {
     p.firstName = s.firstName;
@@ -48,7 +78,9 @@ function sanitizeJSON (s) {
   p.nickName = s.nickName;
   p.privateName = s.privateName;
   if (! s.privatePicture) {
-    p.picture = s.picture;
+    // p.picture = (false  | false) ? "true" : "false";
+    // p.picture = (iexist(s.picture) || urlVal(s.picture).then(exists  => {console.log("urlval was called on " + s.picture); return exists;})) ? s.picture : '';
+    p.picture = (iexist(s.picture) || s.picture.substring(0,4) == "http" ) ? s.picture : '';
   } else {
     p.picture = '';
   }
@@ -76,13 +108,4 @@ readAll('students','.json');
 //     return console.log(err);
 //   }
 // });
-
-fs.writeFile('utils/allstudents.js', 'var studentsArray= ' + JSON.stringify(studentArray) + ';', function(err) {
-  if(err) {
-    return console.log(err);
-  } else
-  {
-    return console.log('utils/allstudents.js successfully written');}
-  
-});
 
