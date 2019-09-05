@@ -1,9 +1,9 @@
 {
-  "firstName": "A",
+  "firstName": "Some",
   "lastName": "Student",
   "nickName": "Keener",
   "privateName": false,
-  "picture": "images/some_picture.jpg",
+  "picture": "https://storage.needpix.com/rsynced_images/homework-624735_1280.jpg",
   "privatePicture": false,
   "email": "student@mail.utoronto.ca",
   "privateEmail": false,
