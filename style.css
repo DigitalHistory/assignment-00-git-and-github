@@ -1,0 +1,62 @@
+/* customize variables here */
+:root {
+    --color-primary: #337ab7;
+ 
+}
+
+
+body {
+    display:grid;
+    grid-template-rows: 10rem 1fr;
+    grid-gap: 2rem;
+    
+}
+
+.bg-primary a, .bg-success a {
+    color: white;
+}
+
+main#cardcontainer {
+    padding: 0 2rem 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+    grid-gap: 2rem;
+}
+
+
+.card {
+    border: 1px solid var(--color-darkGrey) ;
+    background-color: var(--color-lightGrey);
+    display: grid;
+    grid-template-rows: 5rem 35rem 25rem 5rem;
+    grid-gap: 0rem;
+    align-items: stretch;
+    justify-items: stretch;
+    padding: 0;
+}
+
+.card-body {
+    padding: 0 2rem;
+}
+
+section.card header, section.card footer {
+    font-size: 2.2rem;
+    text-align: center;
+    padding-top: 0.3rem;
+    /* background-color: var(--color-success) */
+    background-color: var(--color-primary)
+}
+
+/* make links visible again! */
+
+section.card header a, section.card footer a {
+    color: black;
+}
+
+section.card img.profile-image {
+    /* height: 100%; */
+    /* width: 100%; */
+    /* object-fit: contain; */
+    /* object-position: 50% 0; */
+    
+}
