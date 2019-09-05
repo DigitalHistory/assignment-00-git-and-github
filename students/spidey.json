@@ -1,0 +1,15 @@
+{
+  "firstName": "Miles",
+  "lastName": "Morales",
+  "nickName": "Spidey",
+  "privateName": false,
+  "picture": "images/spidey.jpg",
+  "privatePicture": false,
+  "email": "matt.price@utoronto.ca",
+  "privateEmail": true,
+  "github": "titaniumbones",
+  "privateGithub": false,
+  "superpower" : "spidey-sense, sticky hands, venom sting",
+  "academicinterests": "Biochemistry, general relativity, many-worlds interpretation of quantum mechaniscs. "
+
+}
