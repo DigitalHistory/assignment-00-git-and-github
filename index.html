@@ -7,10 +7,9 @@
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script> -->
-
-    <!-- <link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/cerulean/bootstrap.min.css"> -->
+    <!-- steal some base styles from chota: https://jenil.github.io/chota/ -->
     <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+    <!-- customize in this file -->
     <link rel="stylesheet" href="style.css">
     <style>
      
@@ -21,7 +20,7 @@
 
 <body>
 
-    <nav class="bg-grey">     
+    <nav class="bg-primary">     
         <div class="nav-center">
             <h1><a class="brand" href="#">His393 Class Roster, 2017</a></h1>
         </div>
@@ -72,8 +71,8 @@
     <p class="card-text"><b>Academic Interests:</b> ${s.academicinterests}</p>
 </section> <!-- card-body -->
 <footer class="card-footer text-center">
-    <a href="https://github.com/${s.github}" class="btn btn-primary">Github</a>
-    <a href="mailto:${s.email}" class="btn btn-primary">Email</a>
+    <a href="https://github.com/${s.github}" class="button">Github</a>
+    <a href="mailto:${s.email}" class="button">Email</a>
 </footer>  <!-- card-footer -->
 </section>  <!-- card -->
                     </div>
