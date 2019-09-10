@@ -28,7 +28,7 @@ This assignment is graded pass/fail. You will only get credit if *your repositor
 - commit both these changes
 - *students attempting an A only:* answer reflection questions
 - push all your changes to Github and check that "all checks have passed"
-** Other Options
+** COMMENT Other Options
 Our tool "Lintbot" is intended to remove one troublesome step in the setup process. However, there's a tradeoff: lintbot is easy to use, but it is less powerful and flexible than the advanced tools you might use instead. So if you wish you may also:
 - download and install node.js and npm as described  [[/article/Tools.org][on the Tools page]]
 - install the "Hacking History Advanced" extension to VSCode
