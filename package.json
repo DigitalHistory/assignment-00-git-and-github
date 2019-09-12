@@ -27,6 +27,5 @@
     "url-exists-async-await": "^1.0.0",
     "url-exists-deep": "^1.1.1"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
