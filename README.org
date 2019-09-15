@@ -87,7 +87,7 @@ fix" singleton:
 
 In the folder "Reflection", you will find a file named ~reflection-template.md~. Copy the file contents to a new file named ~yourgithubid.md~ (again, use your real Github id instead of ~githubid~!).  This file contains two subheadings, each of which is a question. Answer each of these questions in a response of approximately 150 words. Your responses should be thoughtful and perceptive, and written at a level that would normally result in a grade of B or higher. 
 ** Run tests
-At any point in the process, you can re-run your tests by dropping your repository's root directory into Lintbot (or by executing ~npm test~ from a terminal in the working directory). Visit the file ~TestResults/results.html~ in a browser to see your updated results.  To have the tests run continuously whenever you modify a file, run ~npm run watch~ instead (you will still have to refresh the web page to see the new results!).
+At any point in the process, you can re-run your tests by executing ~npm test~ from a terminal in the working directory. Visit the file ~TestResults/results.html~ in a browser to see your updated results.  To have the tests run continuously whenever you modify a file, run ~npm run watch~ instead (you will still have to refresh the web page to see the new results!).
 
 You can do all of this within VSCode itself, either by running ~npm: run tests~ from the Command Palette or by running tests directly in the ~Mocha Sidebar~.
 
