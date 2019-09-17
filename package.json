@@ -23,6 +23,7 @@
     "mocha": "^6.1.0",
     "mocha-pretty-spec-reporter": "0.1.0-beta.2",
     "mochawesome": "^4.1.0",
+    "shelljs": "^0.8.3",
     "url-exists": "^1.0.3",
     "url-exists-async-await": "^1.0.0",
     "url-exists-deep": "^1.1.1"

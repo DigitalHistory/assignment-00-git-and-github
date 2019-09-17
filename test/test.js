@@ -78,10 +78,12 @@ describe('Git Checks', function() {
   });
 
   it('All changes in checked-in files should be committed to Git (OK for this to fail while you are still working)', function() {
+    if (process.env.MARKING = 'instructor' ) return this.skip();
     expect(gitCheck.dirty, 'looks like you have changed some files and not committed the changes yet').to.equal(0);
   });
 
   it('All files in current directory should be committed to Git (OK for this to fail while you are still working)', function() {
+    if (process.env.MARKING = 'instructor' ) return this.skip();
     expect(gitCheck.untracked, 'looks like you have some files in the directory which have not been added to the repository. \n      Make sure your answers do not rely on them, or tests will fail on the server.').to.equal(0);
 
   });
@@ -131,26 +133,29 @@ quotation mark will be missing and cause an error.
 });
 
 describe('Image Checks', function() {
-
-  it('Image file with title yourGithubID.jpg should exist in "images" directory', function() {
-    let p = `images/${githubid}.jpg`;
+  if (process.env.MARKING = 'instructor' ) {
+    githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
+    //console.log(githubid + 'HERE I AM');
+  }
+  let p = `images/${githubid}.jpg`;
+  it(`Image file with title ${p} should exist in "images" directory`, function() {
     expect(p).to.be.a.file();
   });
 
   // todo: do a file type check to be sure it's an image 
-
 });
 
-
-
-
 describe('Reflection Checks (not required unless you are attempting an "A" grade!)', function() {
-  it('Reflection file should exist', function() {
-    let r = `Reflection/${githubid}.md`;
+  if (process.env.MARKING = 'instructor' ) {
+    githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
+    //console.log(githubid + 'HERE I AM');
+  }
+  let r = `Reflection/${githubid}.md`;
+  it(`Reflection file ${r} should exist`, function() {
     expect(r, `I can't find the file ${r}`).to.be.a.file();
   });
   it('The total word count for your reflection should be around 525 (give or take)', function() {
-    let content=fs.readFileSync(`Reflection/${githubid}.md`, 'utf-8');
+    let content=fs.readFileSync(r, 'utf-8');
     expect(hwc(content), '').to.be.approximately(525,100);
   });
 });
