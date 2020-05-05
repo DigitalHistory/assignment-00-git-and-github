@@ -11,43 +11,35 @@ const matchesProfEmail = function (email, profEmails) {
   return (profEmails.indexOf(email) > -1);
 };
 
-var studentCommits = 0,
-    minCommits = 2;
+let studentCommits = 0;
+const minCommits = 2;
 var chai=require('chai'),
     expect=chai.expect;
 chai.use(require('chai-fs'));
 
 let name,email,githubid;
 
+// quick helper function
+
+
+// this will run before any `before` or `it` inside a describe block
 before(function() {
   return gitConfig.get()
     .then((config) => {
-      console.log("I AM FIRST!!!!!!!!!!!!!!!!!!!!!!!!")
       if (config.user.name) { name = config.user.name; }
       if (config.user.email) { email = config.user.email; }
       if (config.github.user) { githubid = config.github.user; }
-      console.log(name,email,githubid)
+      // if on instructor machine, then need to try something else
+      // this will work with my weird single-repo setup
+      // match branch `master-githubid`
       if (process.env.MARKING === 'instructor' ) {
         githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
       }
-
       return true
     })
 })
 
-// gitConfig(function (err, config) {
-//   if (err) return done(err); 
-//   console.log(config.github);
-//   if (config.user.name) { name = config.user.name; }
-//   if (config.user.email) { email = config.user.email; }
-//   if (config.github.user) { githubid = config.github.user; }
-//   console.log(githubid, "GHIC!!!!!!!!!!!")
-// });
 
-// if on instructor machine, then need to try something else
-// this will work with my weird single-repo setup
-// match branch `master-githubid`
-// console.log("LOOK AT ME", githubid, "GHIC!!!!!!!!!!!")
 
 
 /////////////////////////////
@@ -57,9 +49,7 @@ before(function() {
 ////////////////////////////
 
 describe('Git Checks', function() {
-  var  gitCheck;
-  console.log("GHIDDDDDDDDDDD", name,email,githubid)
-  
+  let  gitCheck;  
   before(function(done) {
     this.timeout(0);
     gitCommits(repoPath) 
@@ -93,21 +83,13 @@ describe('Git Checks', function() {
     expect(gitCheck.dirty, 'looks like you have changed some files and not committed the changes yet').to.equal(0);
   });
 
-  it('All files in current directory should be committed to Git (OK for this to fail while you are still working)', function() {
+     it('All files in current directory should be committed to Git (OK for this to fail while you are still working)', function() {
     if (process.env.MARKING === 'instructor' ) return this.skip();
     expect(gitCheck.untracked, 'looks like you have some files in the directory which have not been added to the repository. \n      Make sure your answers do not rely on them, or tests will fail on the server.').to.equal(0);
 
   });
 });
 
-function jlint(s) {
-  try {
-    jsonLint.parse(fs.readFileSync(s, 'utf-8'));
-  }
-  catch (e) {
-    return e;
-  }
-}
 
 
 describe('JSON Checks', function() {
@@ -128,7 +110,6 @@ often the error will only be detected several lines after its *actual*
 source. Be on the lookout especially for mising quotation marks,
 commas, braces ("{}"), etc. Often the *closing* parenthsis, brace, or
 quotation mark will be missing and cause an error.
-
 `).to.not.be.an('error');
   });
 
@@ -139,7 +120,6 @@ quotation mark will be missing and cause an error.
     expect(j.github, 'your gituhubid doesn\'t seem to be recorded properly').to.equal(githubid);
     expect(j.picture, 'your JSON file does not record your picture URL or path').to.be.a('string').that.is.not.empty;
   });
-
 
 });
 
