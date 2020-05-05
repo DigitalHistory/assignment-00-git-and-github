@@ -20,6 +20,14 @@ chai.use(require('chai-fs'));
 let name,email,githubid;
 
 // quick helper function
+function jlint(s) {
+  try {
+    jsonLint.parse(fs.readFileSync(s, 'utf-8'));
+  }
+  catch (e) {
+    return e;
+  }
+}
 
 // this will run before any `before` or `it` inside a describe block
 before(function() {
@@ -137,7 +145,7 @@ describe('Image Checks', function() {
 describe('Reflection Checks (not required unless you are attempting an "A" grade!)', function() {
   let r;
   before(function(){
-    r=`Reflection/${githubid}.json`;
+    r=`Reflection/${githubid}.md`;
   })
 
   it(`Reflection file ${r} should exist`, function() {

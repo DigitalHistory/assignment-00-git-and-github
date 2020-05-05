@@ -16,19 +16,18 @@
     "chai": "^4.2.0",
     "chai-fs": "^2.0.0",
     "git-commits": "^1.3.0",
-    "git-config": "0.0.7",
     "git-state": "^4.1.0",
     "gitconfig": "^2.0.8",
     "html-word-count": "^2.0.0",
     "json-validation": "^1.0.4",
     "jsonlint": "^1.6.3",
-    "mocha": "^6.1.0",
+    "mocha": "^7.1.2",
     "mocha-pretty-spec-reporter": "0.1.0-beta.2",
-    "mochawesome": "^4.1.0",
-    "shelljs": "^0.8.3",
+    "mochawesome": "^6.1.1",
+    "shelljs": "^0.8.4",
     "url-exists": "^1.0.3",
     "url-exists-async-await": "^1.0.0",
-    "url-exists-deep": "^1.1.1"
+    "url-exists-deep": "^2.0.6"
   },
   "devDependencies": {}
 }
