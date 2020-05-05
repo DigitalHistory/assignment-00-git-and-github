@@ -1,6 +1,7 @@
 'use strict';
 
-const path = require('path');
+const path = require('path'),
+      shell = require('shelljs');
 const gitCommits = require('git-commits'), fs=require('fs'), hwc=require('html-word-count'),
       gitConfig = require('git-config'), gitState = require('git-state'), jsonLint = require('jsonlint');
 
@@ -25,7 +26,7 @@ var name,email,githubid;
 
 gitConfig(function (err, config) {
   if (err) return done(err); 
-  console.log(config);
+  // console.log(config);
   if (config.user.name) { name = config.user.name; }
   if (config.user.email) { email = config.user.email; }
   if (config.github.user) { githubid = config.github.user; }
@@ -78,12 +79,12 @@ describe('Git Checks', function() {
   });
 
   it('All changes in checked-in files should be committed to Git (OK for this to fail while you are still working)', function() {
-    if (process.env.MARKING = 'instructor' ) return this.skip();
+    if (process.env.MARKING === 'instructor' ) return this.skip();
     expect(gitCheck.dirty, 'looks like you have changed some files and not committed the changes yet').to.equal(0);
   });
 
   it('All files in current directory should be committed to Git (OK for this to fail while you are still working)', function() {
-    if (process.env.MARKING = 'instructor' ) return this.skip();
+    if (process.env.MARKING === 'instructor' ) return this.skip();
     expect(gitCheck.untracked, 'looks like you have some files in the directory which have not been added to the repository. \n      Make sure your answers do not rely on them, or tests will fail on the server.').to.equal(0);
 
   });
@@ -133,7 +134,8 @@ quotation mark will be missing and cause an error.
 });
 
 describe('Image Checks', function() {
-  if (process.env.MARKING = 'instructor' ) {
+  let ghid = githubid
+  if (process.env.MARKING === 'instructor' ) {
     githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
     //console.log(githubid + 'HERE I AM');
   }
@@ -146,9 +148,9 @@ describe('Image Checks', function() {
 });
 
 describe('Reflection Checks (not required unless you are attempting an "A" grade!)', function() {
-  if (process.env.MARKING = 'instructor' ) {
+  if (process.env.MARKING === 'instructor' ) {
     githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
-    //console.log(githubid + 'HERE I AM');
+    // console.log('reflection:' + githubid + 'HERE I AM');
   }
   let r = `Reflection/${githubid}.md`;
   it(`Reflection file ${r} should exist`, function() {
