@@ -21,7 +21,6 @@ let name,email,githubid;
 
 // quick helper function
 
-
 // this will run before any `before` or `it` inside a describe block
 before(function() {
   return gitConfig.get()
