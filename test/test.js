@@ -3,7 +3,7 @@
 const path = require('path'),
       shell = require('shelljs');
 const gitCommits = require('git-commits'), fs=require('fs'), hwc=require('html-word-count'),
-      gitConfig = require('git-config'), gitState = require('git-state'), jsonLint = require('jsonlint');
+      gitConfig = require('gitconfig'), gitState = require('git-state'), jsonLint = require('jsonlint');
 
 const repoPath = path.resolve(process.env.REPO || (__dirname + '/../.git'));
 var ignoreCommitEmails = 'matt.price@utoronto.ca';
@@ -17,29 +17,38 @@ var chai=require('chai'),
     expect=chai.expect;
 chai.use(require('chai-fs'));
 
-var name,email,githubid;
+let name,email,githubid;
 
+before(function() {
+  return gitConfig.get()
+    .then((config) => {
+      console.log("I AM FIRST!!!!!!!!!!!!!!!!!!!!!!!!")
+      if (config.user.name) { name = config.user.name; }
+      if (config.user.email) { email = config.user.email; }
+      if (config.github.user) { githubid = config.github.user; }
+      console.log(name,email,githubid)
+      if (process.env.MARKING === 'instructor' ) {
+        githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
+      }
 
+      return true
+    })
+})
 
+// gitConfig(function (err, config) {
+//   if (err) return done(err); 
+//   console.log(config.github);
+//   if (config.user.name) { name = config.user.name; }
+//   if (config.user.email) { email = config.user.email; }
+//   if (config.github.user) { githubid = config.github.user; }
+//   console.log(githubid, "GHIC!!!!!!!!!!!")
+// });
 
+// if on instructor machine, then need to try something else
+// this will work with my weird single-repo setup
+// match branch `master-githubid`
+// console.log("LOOK AT ME", githubid, "GHIC!!!!!!!!!!!")
 
-
-gitConfig(function (err, config) {
-  if (err) return done(err); 
-  // console.log(config);
-  if (config.user.name) { name = config.user.name; }
-  if (config.user.email) { email = config.user.email; }
-  if (config.github.user) { githubid = config.github.user; }
-
-});
-
-// let f = function () {
-//   return console.log('hello');
-// };
-
-// f;
-
-// console.log('hello');
 
 /////////////////////////////
 ///
@@ -49,6 +58,8 @@ gitConfig(function (err, config) {
 
 describe('Git Checks', function() {
   var  gitCheck;
+  console.log("GHIDDDDDDDDDDD", name,email,githubid)
+  
   before(function(done) {
     this.timeout(0);
     gitCommits(repoPath) 
@@ -58,9 +69,8 @@ describe('Git Checks', function() {
           studentCommits++;
         }
       })
-      .on('end', function () {
-      })
-    ;
+      // .on('end', function () {
+      // });
 
     gitCheck  = gitState.checkSync('./', function(r,e) {
       //return [r, e];
@@ -101,17 +111,17 @@ function jlint(s) {
 
 
 describe('JSON Checks', function() {
-  before(function() {
-    // read the JSON file
-  });
+  let p;
+  before(function(){
+    p=`students/${githubid}.json`;
+  })
 
-  it('Text file with title yourGithubID.json should exist in "students" directory', function() {
-    let p = `students/${githubid}.json`;
+  it('Text file with title ${githubid}.json should exist in "students" directory', function() {
     expect(p).to.be.a.file();
   });
 
   it('JSON file should be valid JSON -- please check quotation marks, colons, commas, etc.', function() {
-    let p = `students/${githubid}.json`;
+    //let p = `students/${githubid}.json`;
     expect(jlint(p), `Do your best to make sense of the error message below. If you have
 created a syntax error, the debugger will try to find the mistake, but
 often the error will only be detected several lines after its *actual*
@@ -122,7 +132,7 @@ quotation mark will be missing and cause an error.
 `).to.not.be.an('error');
   });
 
-  it('JSON file should contain name, email,github, and picture', function() {
+  it('JSON file should contain name, email,github, and picture; test is case-sensitive', function() {
     let j = JSON.parse(fs.readFileSync(`students/${githubid}.json`, 'utf8'));
     expect(j.lastName, 'your JSON file does not record your last name!').to.be.a('string').that.is.not.empty;
     expect(j.firstName, 'your JSON file does not record your first name!').to.be.a('string').that.is.not.empty;
@@ -134,25 +144,23 @@ quotation mark will be missing and cause an error.
 });
 
 describe('Image Checks', function() {
-  let ghid = githubid
-  if (process.env.MARKING === 'instructor' ) {
-    githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
-    //console.log(githubid + 'HERE I AM');
-  }
-  let p = `images/${githubid}.jpg`;
+  let p;
+  before(function(){
+    p=`students/${githubid}.json`;
+  })
   it(`Image file with title ${p} should exist in "images" directory`, function() {
-    expect(p).to.be.a.file();
+     expect(p).to.be.a.file();
   });
 
   // todo: do a file type check to be sure it's an image 
 });
 
 describe('Reflection Checks (not required unless you are attempting an "A" grade!)', function() {
-  if (process.env.MARKING === 'instructor' ) {
-    githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
-    // console.log('reflection:' + githubid + 'HERE I AM');
-  }
-  let r = `Reflection/${githubid}.md`;
+  let r;
+  before(function(){
+    r=`Reflection/${githubid}.json`;
+  })
+
   it(`Reflection file ${r} should exist`, function() {
     expect(r, `I can't find the file ${r}`).to.be.a.file();
   });
