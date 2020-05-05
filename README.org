@@ -103,9 +103,8 @@ Now open the file ~index.html~ in your browser. You should see your card along w
 
 ** Handing in
 
-As mentioned above: when you are finished -- when your code passes all the tests -- submit your code by [[https://code.visualstudio.com/docs/editor/versioncontrol#_git-status-bar-actions][pushing your changes to origin in VSCode]] (or with ~git push origin master~ in the terminal). At that point, the "continuous integration server"  will re-run the tests and confirm that your code is valid; if the tests pass, a script will trigger and upload your work to the website. 
+As mentioned above: when you are finished -- when your code passes all the tests -- submit your code by [[https://code.visualstudio.com/docs/editor/versioncontrol#_git-status-bar-actions][pushing your changes to origin in VSCode]] (or with ~git push origin master~ in the terminal). Your work will be automatically downloaded, and I will check your work on my laptop. If tests fail, I will try to indicate where you went wrong so that you can resubmit. 
 
-'
 
 * For the curious: How this works
 This is a very simple example of using *structured data* to create a visual interface that, as it were, represents that data to the visitor. In this case, the "representation" takes the form of a playing card. 
