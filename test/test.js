@@ -40,7 +40,7 @@ before(function() {
       // this will work with my weird single-repo setup
       // match branch `master-githubid`
       if (process.env.MARKING === 'instructor' ) {
-        githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^(\w+)-/)[1];
+        githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^([A-Za-z0-9_-]+)-/)[1];
       }
       return true
     })
