@@ -145,10 +145,11 @@ describe('Image Checks', function() {
 describe('Reflection Checks (not required unless you are attempting an "A" grade!)', function() {
   let r;
   before(function(){
-    r=`Reflection/${githubid}.md`;
+    r=`Reflection/${githubid}.md`;    
   })
 
-  it(`Reflection file ${r} should exist`, function() {
+  it(`Reflection file Reflection/${githubid}.md should exist`, function() {
+    // console.log("R SHOULD EXIST!",r)
     expect(r, `I can't find the file ${r}`).to.be.a.file();
   });
   it('The total word count for your reflection should be around 525 (give or take)', function() {
