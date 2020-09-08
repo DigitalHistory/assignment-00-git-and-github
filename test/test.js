@@ -108,7 +108,7 @@ describe('JSON Checks', function() {
     p=`students/${githubid}.json`;
   });
 
-  step('Text file with title ${githubid}.json should exist in "students" directory', function() {
+  step('Text file with title {your-github-id}.json should exist in "students" directory', function() {
     expect(p).to.be.a.file();
   });
 
@@ -136,9 +136,9 @@ quotation mark will be missing and cause an error.
 describe('Image Checks', function() {
   let p;
   before(function(){
-    p=`students/${githubid}.json`;
-  })
-  it(`Image file with title ${p} should exist in "images" directory`, function() {
+    p=`images/${githubid}.jpg`;
+  });
+  it('Image file with title {your-github-id}.jpg should exist in "images" directory', function() {
     expect(p).to.be.a.file;
   });
 
@@ -160,3 +160,16 @@ describe('Reflection Checks (not required unless you are attempting an "A" grade
     expect(hwc(content), '').to.be.approximately(525,100);
   });
 });
+
+
+// describe('random', function () {
+
+//   before(function(){
+//     this.currentTest.githubid = githubid;
+//   });
+//   it(`Image file with title ${githubid}.jpg should exist in "images" directory`, function() {
+//     expect(`images/${this.test.githubid}.jpg`).to.be.a.file;
+//   });
+
+// });
+
