@@ -1,8 +1,11 @@
 'use strict';
+/*global step */
 
 const path = require('path'),
       shell = require('shelljs');
-const gitCommits = require('git-commits'), fs=require('fs'), hwc=require('html-word-count'),
+const gitCommits = require('git-commits'),
+      fs=require('fs'),
+      hwc=require('html-word-count'),
       gitConfig = require('gitconfig'), gitState = require('git-state'), jsonLint = require('jsonlint');
 
 const repoPath = path.resolve(process.env.REPO || (__dirname + '/../.git'));
@@ -103,13 +106,13 @@ describe('JSON Checks', function() {
   let p;
   before(function(){
     p=`students/${githubid}.json`;
-  })
+  });
 
-  it('Text file with title ${githubid}.json should exist in "students" directory', function() {
+  step('Text file with title ${githubid}.json should exist in "students" directory', function() {
     expect(p).to.be.a.file();
   });
 
-  it('JSON file should be valid JSON -- please check quotation marks, colons, commas, etc.', function() {
+  step('JSON file should be valid JSON -- please check quotation marks, colons, commas, etc.', function() {
     //let p = `students/${githubid}.json`;
     expect(jlint(p), `Do your best to make sense of the error message below. If you have
 created a syntax error, the debugger will try to find the mistake, but
@@ -120,7 +123,7 @@ quotation mark will be missing and cause an error.
 `).to.not.be.an('error');
   });
 
-  it('JSON file should contain name, email,github, and picture; test is case-sensitive', function() {
+  step('JSON file should contain name, email,github, and picture; test is case-sensitive', function() {
     let j = JSON.parse(fs.readFileSync(`students/${githubid}.json`, 'utf8'));
     expect(j.lastName, 'your JSON file does not record your last name!').to.be.a('string').that.is.not.empty;
     expect(j.firstName, 'your JSON file does not record your first name!').to.be.a('string').that.is.not.empty;
@@ -136,7 +139,7 @@ describe('Image Checks', function() {
     p=`students/${githubid}.json`;
   })
   it(`Image file with title ${p} should exist in "images" directory`, function() {
-     expect(p).to.be.a.file();
+    expect(p).to.be.a.file;
   });
 
   // todo: do a file type check to be sure it's an image 
