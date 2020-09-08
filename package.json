@@ -1,12 +1,12 @@
 {
   "name": "git-and-github",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "exercises for learning Github in Digital History",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults test/test.js",
-    "test-reflection": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults test/test.js || true",
-    "watch": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults -w",
+    "test": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults test/test.js --require mocha-steps",
+    "test-reflection": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults test/test.js --require mocha-steps|| true",
+    "watch": "mocha -t 0 --reporter mochawesome --reporter-options reportDir=TestResults,reportFilename=testresults test/test.js -w --require mocha-steps",
     "collectjson": "node utils/collectjson.js"
   },
   "author": "Matt Price",
