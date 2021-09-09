@@ -29,24 +29,40 @@ function jlint(s) {
   }
 }
 
+// gitConfig.get()
+//   .then((config) => {
+//     //console.log(config);
+//     if (config.user.name) { name = config.user.name; }
+//     if (config.user.email) { email = config.user.email; }
+//     if (config.github.user) { githubid = config.github.user; }
+//     // if on instructor machine, then need to try something else
+//     // this will work with my weird single-repo setup
+//     // match branch `master-githubid`
+//     if (process.env.MARKING === 'instructor' ) {
+//       githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^([A-Za-z0-9_-]+)-/)[1];
+//     }
+//     return true
+//   })
+
 // this will run before any `before` or `it` inside a describe block
-before(function() {
-  return gitConfig.get()
+before(async function(done) {
+  await gitConfig.get()
     .then((config) => {
+      //console.log(config);
       if (config.user.name) { name = config.user.name; }
       if (config.user.email) { email = config.user.email; }
       if (config.github.user) { githubid = config.github.user; }
+      //console.log(githubid, "in beforeall");
+
       // if on instructor machine, then need to try something else
       // this will work with my weird single-repo setup
       // match branch `master-githubid`
       if (process.env.MARKING === 'instructor' ) {
         githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^([A-Za-z0-9_-]+)-/)[1];
       }
-      return true
-    })
+    }).then (() => done())
+  //done()
 })
-
-
 
 
 /////////////////////////////
@@ -103,9 +119,10 @@ describe('JSON Checks', function() {
   let p;
   before(function(){
     p=`students/${githubid}.json`;
+    //console.log("before done", githubid);
   })
 
-  it('Text file with title ${githubid}.json should exist in "students" directory', function() {
+  it(githubid + 'Text file with title yourgithubid.json should exist in "students" directory', function() {
     expect(p).to.be.a.file();
   });
 
@@ -131,12 +148,12 @@ quotation mark will be missing and cause an error.
 });
 
 describe('Image Checks', function() {
-  let p;
+  let p
   before(function(){
-    p=`students/${githubid}.json`;
+    p=`images/${githubid}.jpg`;
   })
-  it(`Image file with title ${p} should exist in "images" directory`, function() {
-     expect(p).to.be.a.file();
+  it(`Image file with title yourgithubid.jpg should exist in "images" directory`, function() {
+    expect(p, `I don't see any image files here.`).to.be.a.file();
   });
 
   // todo: do a file type check to be sure it's an image 
