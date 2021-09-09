@@ -58,8 +58,11 @@ async function readAll(startPath,filter){
 function iexist (path) {
   // console.log(path);
   let rv = fs.existsSync(path);
-  // console.log ("return vlaue is " + rv);
-  return rv;
+  //console.log ("return value is " + rv, path);
+  if (rv) {
+    return path} else {
+      return false
+    }
 }
 
 /**
