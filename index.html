@@ -44,7 +44,8 @@
 
    $(function() {
        $.each(studentsArray, function(i, s) {
-           var tblRow = `<tr> 
+           //console.log(s);
+           let tblRow = `<tr> 
         <td>${(s.firstName) ? s.firstName : ''}</td>
         <td>${(s.lastName) ? s.lastName : ''}</td>
         <td>${s.nickName}</td>
@@ -58,7 +59,7 @@
                aiString = (s.academicinterests ) ? s.academicinterests : '',
                imageUrl = (s.picture) ? s.picture :  "http://lorempixel.com/400/400/nature/",
                imageAlt = (s.picture) ? "Image of " + (s.nickName ||  s.firstName || "student") : "Oops! no picture found." ;
-           console.log("nick is " + nickString);
+           //console.log("nick is " + nickString);
            let card = `
   <section class="card"  > 
   <header class="card-header">
