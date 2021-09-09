@@ -13,6 +13,18 @@ const studentsArray= [
     "academicinterests": "Artificial Intelligence; Cognitive Science; Psychology of Emotion; Physiology of Music"
   },
   {
+    "firstName": "Eren",
+    "lastName": "Yeager",
+    "nickName": "Eren",
+    "privateName": false,
+    "picture": "https://i0.wp.com/craffic.co.in/wp-content/uploads/2021/03/Attack-On-Titan-eren-yeager.jpg?resize=696%2C392&ssl=1",
+    "privatePicture": false,
+    "github": "erenyeager",
+    "privateGithub": false,
+    "superpower": "mechanical flying gear, terrifying Titan",
+    "academicinterests": "Alternatives to genocide in a state of perpetual war."
+  },
+  {
     "firstName": "Korra",
     "lastName": "",
     "nickName": "Avatar",
@@ -66,7 +78,7 @@ const studentsArray= [
     "lastName": "Price",
     "nickName": "Bones",
     "privateName": false,
-    "picture": "",
+    "picture": "images/titaniumbones.jpg",
     "privatePicture": false,
     "github": "titaniumbones",
     "privateGithub": false,

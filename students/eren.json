@@ -1,0 +1,15 @@
+{
+  "firstName": "Eren",
+  "lastName": "Yeager",
+  "nickName": "Eren",
+  "privateName": false,
+  "picture": "https://i0.wp.com/craffic.co.in/wp-content/uploads/2021/03/Attack-On-Titan-eren-yeager.jpg?resize=696%2C392&ssl=1",
+  "privatePicture": false,
+  "email": "eren.yeager@@utoronto.ca",
+  "privateEmail": true,
+  "github": "erenyeager",
+  "privateGithub": false,
+  "superpower" : "mechanical flying gear, terrifying Titan",
+  "academicinterests": "Alternatives to genocide in a state of perpetual war."
+
+}
