@@ -1,20 +1,9 @@
-// require modules
-const path = require('path'),
-      fs=require('fs'),
-      util=require('util'),
-      urlExists = require('url-exists');
+// import modules
+import * as path from 'path';
+import * as fs from 'fs';
+import * as util from 'util';
+import * as urlExists from 'url-exists-deep';
 
-// let urlVal = async(data) => {
-//   try {
-//     const result = await urlExists(data);
-//     console.log(`Result for ${data} is ${result}`);
-//   } catch(err) {
-//     console.log(err);
-//   }
-// };
-
-let urlVal = url => new Promise((resolve, reject) => 
-  urlExists(url, (err, exists) => err ? reject(err) : resolve(exists)));
 
 // create empty array to hold students
 // this array lives in the "global namespace".
@@ -68,7 +57,7 @@ async function readAll(startPath,filter){
 
 function iexist (path) {
   // console.log(path);
-  rv = fs.existsSync(path);
+  let rv = fs.existsSync(path);
   // console.log ("return vlaue is " + rv);
   return rv;
 }
@@ -117,12 +106,6 @@ async function sanitizeJSON (s) {
 // here, we finally "call" the function and do the work. 
 readAll('students','.json');
 
-// console.log(studentArray);
+ console.log(studentArray);
 
-// jsObj = {"students": studentArray};
-// fs.writeFile("utils/allstudents.json", JSON.stringify(jsObj), function(err) {
-//   if(err) {
-//     return console.log(err);
-//   }
-// });
 
