@@ -45,7 +45,7 @@ function jlint(s) {
 //   })
 
 // this will run before any `before` or `it` inside a describe block
-before(async function(done) {
+before(async function() {
   await gitConfig.get()
     .then((config) => {
       //console.log(config);
@@ -60,7 +60,7 @@ before(async function(done) {
       if (process.env.MARKING === 'instructor' ) {
         githubid = shell.exec('git rev-parse --abbrev-ref HEAD').match(/^([A-Za-z0-9_-]+)-/)[1];
       }
-    }).then (() => done())
+    })
   //done()
 })
 
@@ -122,7 +122,7 @@ describe('JSON Checks', function() {
     //console.log("before done", githubid);
   })
 
-  it(githubid + 'Text file with title yourgithubid.json should exist in "students" directory', function() {
+  it('Text file with title yourgithubid.json should exist in "students" directory', function() {
     expect(p).to.be.a.file();
   });
 
@@ -142,7 +142,7 @@ quotation mark will be missing and cause an error.
     expect(j.lastName, 'your JSON file does not record your last name!').to.be.a('string').that.is.not.empty;
     expect(j.firstName, 'your JSON file does not record your first name!').to.be.a('string').that.is.not.empty;
     expect(j.github, 'your gituhubid doesn\'t seem to be recorded properly').to.equal(githubid);
-    expect(j.picture, 'your JSON file does not record your picture URL or path').to.be.a('string').that.is.not.empty;
+    expect(j.picture, 'in your JSON file, the picture you identify should be named images/yourgithubid.jpg').to.equal(`images/${githubid}.jpg`);
   });
 
 });
