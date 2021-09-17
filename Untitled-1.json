@@ -1,0 +1,15 @@
+{
+    "firstName": "Butternut",
+    "lastName": "Em",
+    "nickName": "Squash",
+    "privateName": false,
+    "picture": "images/superpote.jpg",
+    "privatePicture": false,
+    "email": "matthew.buttignon@mail.utoronto.ca",
+    "privateEmail": true,
+    "github": "Matt-B-is-me",
+    "privateGithub": false,
+    "superpower" : "Can Be Dropped, Nutritious, Dense",
+    "academicinterests": "The Fundamentality of the Mental, Disliking Eggplant, English literature"
+  
+  }
